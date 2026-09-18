@@ -11,6 +11,10 @@ $color-accent-orange: #ff5722; // "Discounted Price" badge, Star rating color
 $color-text-dark: #000000; // Hero headings ("Travel top destination...")
 $color-text-muted: #191825; // Paragraph body text (opacity wala hex/rgba code)
 
+$color-yellow-star: #facd49;
+$color-dot-inactive: rgba($color-text-muted, 0.1);
+$color-dot-active: $color-secondary;
+
 // 3. Section Backgrounds & Accents
 $grad-mesh-orange: radial-gradient(
     circle,
@@ -65,3 +69,15 @@ $breakpoints: (
     'tablet': 431px,
     'desktop': 1025px,
 );
+
+// ==========================================
+// BORDERS
+// ==========================================
+$border-translucent-dark: 1px solid rgba(25, 24, 37, 0.1);
+
+// ==========================================
+// SHADOWS
+// ==========================================
+$shadow-button-primary: 0 15px 30px rgba(93, 80, 198, 0.25);
+$shadow-button-primary-hover: 0 20px 35px rgba(93, 80, 198, 0.35);
+$shadow-floating-card: 0 12px 28px rgba(0, 0, 0, 0.08);

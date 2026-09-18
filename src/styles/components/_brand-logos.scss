@@ -1,0 +1,39 @@
+@use '../abstract' as *;
+
+.brand-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    @include respond-to('tablet') {
+        gap: 2.5rem;
+    }
+
+    @include respond-to('desktop') {
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-height: 32px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.6;
+            transition:
+                opacity 0.2s ease,
+                transform 0.2s ease;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+    }
+}

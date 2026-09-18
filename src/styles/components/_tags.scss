@@ -1,0 +1,68 @@
+@use '../abstract' as *;
+
+// Section Subtitle ("TRAVEL POINT", "TESTIMONIALS")
+.section-tag {
+    color: $color-secondary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+// "Explore the world!" Tag
+.tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    background-color: rgba($color-secondary, 0.1);
+    color: $color-secondary;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-sm;
+}
+
+// Floating Badges ("Top Places", "Discounted Price")
+.badge-floating {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $color-white;
+    padding: 0.65rem 1.25rem;
+    border-radius: 100px;
+    box-shadow: $shadow-floating-card;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xs;
+    z-index: 2;
+}
+
+// Floating Circular Icon Badges
+.floating-icon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow-floating-card;
+    z-index: 2;
+
+    &--pink {
+        background-color: $color-secondary;
+        color: $color-white;
+    }
+
+    &--orange {
+        background-color: $color-accent-orange;
+        color: $color-white;
+    }
+
+    &--yellow {
+        background-color: $color-yellow-star;
+        color: $color-white;
+    }
+}
