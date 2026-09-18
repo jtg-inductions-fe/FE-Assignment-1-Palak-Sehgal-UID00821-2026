@@ -1,0 +1,26 @@
+@use './variables' as *;
+// ==========================================
+// MOBILE-FIRST MEDIA QUERY MIXINS
+// ==========================================
+// 1. Tablet Up (>= 431px)
+// @mixin tablet {
+//     @media screen and (min-width: map-get($breakpoints, 'tablet')) {
+//         @content;
+//     }
+// }
+// // 2. Desktop Up (>= 1025px)
+// @mixin desktop {
+//     @media screen and (min-width: map-get($breakpoints, 'desktop')) {
+//         @content;
+//     }
+// }
+// Custom Dynamic Min-Width Mixin
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown breakpoint: `#{$breakpoint}`.";
+    }
+}

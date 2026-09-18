@@ -1,0 +1,36 @@
+@use '../abstract' as *;
+
+.mesh-glow-top-left {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    // Direct strong colors with opacity for visibility
+    background: $grad-mesh-orange;
+    filter: blur(50px);
+    pointer-events: none;
+    z-index: 0; // Negative z-index removes so that it won't hide behind the #fff background
+}
+
+.has-ambient-yellow-glow {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(
+            -50%
+        ); /* Right border ke vertical center par align ho jayega */
+        width: 350px;
+        height: 500px;
+        background: $grad-mesh-yellow-right-center;
+        filter: blur(40px);
+        pointer-events: none;
+        z-index: -1;
+    }
+}

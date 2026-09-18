@@ -1,0 +1,36 @@
+@use '../abstract' as *;
+
+.hero-test-wrapper {
+    position: relative;
+    min-height: 80vh;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    overflow: hidden; // Glows ko container ke bahar overflow hone se rokta hai
+
+    @include respond-to('tablet') {
+        padding: 80px 40px;
+    }
+}
+
+.badge-discount {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff5722;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--grad-btn-primary);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(93, 80, 230, 0.3);
+}

@@ -1,0 +1,71 @@
+@use '../abstract/variables' as *;
+
+/* 1. Box Sizing Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Core HTML & Body Baseline */
+html {
+    font-size: 100%; // 16px default
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; //while changing from portrait to landscape
+}
+
+body {
+    min-height: 100vh;
+    font-family: $font-family-base;
+    color: $color-text-dark;
+    background-color: $color-white;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; //On Mac OS and Safari/Firefox pe font edges are rendered ultra-crisp
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; // Prevents unwanted horizontal scroll on mobile
+}
+
+/* 3. Media & Form Elements Reset */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* 4. Lists & Links Reset */
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+/* 5. Accessibility Focus Outline Styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+}

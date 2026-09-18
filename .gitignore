@@ -2,14 +2,26 @@
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
-# Files
+# Dependencies
 node_modules
+
+# Build & Vite Caches
 dist
+dist-ssr
+.vite
+
+
+# Tooling Caches
+.eslintcache
+.husky/_
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.sw?
