@@ -1,48 +1,76 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="src/styles/main.scss" />
+
+        <!-- 1. Primary Page Title & SEO Meta Tags -->
+        <title>Travlog - Travel Top Destination of the World</title>
+        <meta
+            name="description"
+            content="We always make our customer happy by providing as many choices as possible. Discover top travel destinations and dream locations with Travlog."
+        />
+        <meta
+            name="keywords"
+            content="travel, holiday packages, luxury hotels, airlines, travel destinations, travlog"
+        />
+        <meta name="author" content="Travlog" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#5d50c6" />
+
+        <!-- 2. Favicons & Multi-device Icons -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/assets/icons/travlog-logo-header.svg"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="/assets/icons/travlog-logo-header.svg"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <!-- 3. Open Graph (OG) Metadata (Facebook, LinkedIn, Discord) -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Travlog - Travel Top Destination of the World"
+        />
+        <meta
+            property="og:description"
+            content="We always make our customer happy by providing as many choices as possible. Discover top travel destinations and dream locations with Travlog."
+        />
+        <meta
+            property="og:image"
+            content="/assets/images/sea-view-desktop.png"
+        />
+        <meta property="og:site_name" content="Travlog" />
+        <meta property="og:locale" content="en_US" />
+
+        <!-- 4. Twitter Cards Metadata (X / Twitter) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Travlog - Travel Top Destination of the World"
+        />
+        <meta
+            name="twitter:description"
+            content="We always make our customer happy by providing as many choices as possible. Discover top travel destinations and dream locations with Travlog."
+        />
+        <meta
+            name="twitter:image"
+            content="/assets/images/sea-view-desktop.png"
+        />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="./src/styles/main.scss" />
     </head>
     <body>
-        <section class="hero-test-wrapper">
-            <!-- Glowing Mesh Backgrounds -->
-            <!-- <div class="mesh-glow-top-left"></div>
-            <div class="mesh-glow-center"></div>
+        <main class="container">
+            <!-- 1. Buttons Usage -->
+            <div>Travlog</div>
+        </main>
 
-            <div class="hero-content">
-                <span class="badge-discount discount-glow-bg">
-                    Discounted Price
-                </span>
-
-                <h1>Travel top destination of the world</h1>
-
-                <button class="btn-primary">Get Started</button>
-            </div> -->
-            <!-- Example of applying to the specific card from reference -->
-            <div class="travel-card has-ambient-yellow-glow">
-                <!-- Image placeholder from reference -->
-                <img
-                    src="/public/assets/images/sea-view-desktop.png"
-                    alt="Travel Place"
-                    class="card-image"
-                />
-
-                <!-- "Top Places" Badge -->
-                <div class="badge-top-places">
-                    <i class="icon-location"></i> Top Places
-                </div>
-
-                <!-- Orange floating icon (like in ref) -->
-                <div class="floating-icon icon-orange">
-                    <i class="icon-person"></i>
-                </div>
-
-                <!-- ... (rest of the card content) -->
-            </div>
-        </section>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

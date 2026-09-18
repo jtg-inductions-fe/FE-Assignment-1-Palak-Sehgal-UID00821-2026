@@ -1,0 +1,17 @@
+{
+    "name": "Travlog - Travel Top Destination of the World",
+    "short_name": "Travlog",
+    "description": "We always make our customer happy by providing as many choices as possible.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#5d50c6",
+    "icons": [
+        {
+            "src": "/assets/icons/travlog-logo-header.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
