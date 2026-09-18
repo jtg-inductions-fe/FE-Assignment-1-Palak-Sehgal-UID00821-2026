@@ -4,6 +4,8 @@ const config = {
     semi: true,
     singleQuote: true,
     endOfLine: 'lf',
+    bracketSpacing: true,
+    bracketSameLine: false,
 };
 
 export default config;

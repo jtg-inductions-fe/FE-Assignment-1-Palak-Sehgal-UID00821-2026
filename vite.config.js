@@ -1,6 +1,7 @@
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig(() => {
     return {
@@ -9,7 +10,7 @@ export default defineConfig(() => {
                 minify: true,
             }),
             ViteImageOptimizer({
-                test: /\.(jpg|png)$/i,
+                test: /\.(jpg|png|svg|webp)$/i,
                 includePublic: true,
                 logStats: true,
                 png: {
@@ -18,12 +19,16 @@ export default defineConfig(() => {
                 jpg: {
                     quality: 90,
                 },
+                svg: {
+                    quality: 90,
+                },
                 webp: {
                     quality: 90,
                 },
             }),
         ],
         build: {
+            emptyOutDir: true,
             rollupOptions: {
                 output: {
                     chunkFileNames: 'js/[name]-[hash].js',
@@ -35,13 +40,29 @@ export default defineConfig(() => {
                         if (/\.css$/.test(name ?? '')) {
                             return 'css/[name]-[hash][extname]';
                         }
+                        if (/\.(woff2?|ttf|eot)$/.test(name ?? '')) {
+                            return 'fonts/[name]-[hash][extname]';
+                        }
                         return '[name]-[hash][extname]';
                     },
                 },
             },
         },
+        css: {
+            devSourcemap: true,
+        },
+        resolve: {
+            alias: {
+                '@': fileURLToPath(new URL('./src', import.meta.url)),
+                '@assets': fileURLToPath(
+                    new URL('./public/assets', import.meta.url),
+                ),
+            },
+        },
         server: {
             port: 3000,
+            open: true,
+            host: true,
         },
     };
 });
