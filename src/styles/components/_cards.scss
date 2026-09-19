@@ -1,10 +1,10 @@
-@use '@/styles/abstract' as *;
+@use '../abstract/variables' as *;
 
 // 2x2 Stats Grid Card
 .stat-card {
     padding: 2rem 1.5rem;
     border: $border-translucent-dark;
-    border-radius: 24px;
+    border-radius: 1.5rem;
     text-align: center;
     background-color: $color-white;
 
@@ -25,7 +25,7 @@
 // Hero Image Card Frame
 .media-card {
     position: relative;
-    border-radius: 32px;
+    border-radius: 2rem;
     overflow: hidden;
 
     img {

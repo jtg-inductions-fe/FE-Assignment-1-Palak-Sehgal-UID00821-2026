@@ -1,17 +1,19 @@
-// ==========================================================================
+@use './colors' as *;
+
+// ==========================================
 // ABSTRACTS: VARIABLES (COLORS & STYLES)
-// ==========================================================================
+// ==========================================
 
 // 1. Core Brand Colors
-$color-primary: #5d50c6; // Navbar sign up button, Primary active tabs, Arrows
-$color-secondary: #f85e9f; // "TRAVEL POINT" & "TESTIMONIALS" badge text color
-$color-accent-orange: #ff5722; // "Discounted Price" badge, Star rating color
+$color-primary: $purple;
+$color-secondary: $pink;
+$color-accent-orange: $orange;
 
 // 2. Text Colors
-$color-text-dark: #000000; // Hero headings ("Travel top destination...")
-$color-text-muted: #191825; // Paragraph body text (opacity wala hex/rgba code)
+$color-text-dark: $black;
+$color-text-muted: $dark-gray;
 
-$color-yellow-star: #facd49;
+$color-yellow-star: $yellow;
 $color-dot-inactive: rgba($color-text-muted, 0.1);
 $color-dot-active: $color-secondary;
 
@@ -23,17 +25,17 @@ $grad-mesh-orange: radial-gradient(
 );
 $grad-mesh-yellow-right-center: radial-gradient(
     ellipse 60% 80% at right center,
-    /* Right edge ke center par anchor hua */ rgba(241, 213, 111, 0.4) 0%,
+    rgba(241, 213, 111, 0.4) 0%,
     rgba(255, 230, 150, 0.18) 50%,
     rgba(255, 255, 255, 0) 80%
 );
 
 // 4. Component / Card Backgrounds
-$color-white: #ffffff; // Base white for cards & page background
+$color-white: $white;
 
-// ==========================================================================
+// ==========================================
 // ABSTRACTS: TYPOGRAPHY VARIABLES
-// ==========================================================================
+// ==========================================
 
 // Font Families
 $font-family-base:
@@ -48,10 +50,11 @@ $font-family-heading: 'Circular Std', 'Inter', sans-serif;
 // Font Weights
 $font-weight-regular: 400;
 $font-weight-medium: 500;
+$font-weight-large: 600;
 $font-weight-bold: 700;
 $font-weight-black: 900;
 
-// Font Sizes (Rem Units: Base 16px)
+// Font Sizes
 $font-size-xs: 0.75rem; // 12px
 $font-size-sm: 0.875rem; // 14px
 $font-size-base: 1rem; // 16px
@@ -60,7 +63,7 @@ $font-size-xl: 1.25rem; // 20px
 $font-size-2xl: 1.5rem; // 24px
 $font-size-3xl: 2rem; // 32px
 $font-size-4xl: 2.5rem; // 40px
-$font-size-5xl: 3.5rem; // 56px (Hero Main Title)
+$font-size-5xl: 3.5rem; // 56px
 
 // ==========================================
 // MOBILE-FIRST BREAKPOINT MAP
@@ -73,11 +76,20 @@ $breakpoints: (
 // ==========================================
 // BORDERS
 // ==========================================
-$border-translucent-dark: 1px solid rgba(25, 24, 37, 0.1);
+$border-translucent-dark: 0.0625rem solid rgba($color-text-muted, 0.1);
 
 // ==========================================
 // SHADOWS
 // ==========================================
-$shadow-button-primary: 0 15px 30px rgba(93, 80, 198, 0.25);
-$shadow-button-primary-hover: 0 20px 35px rgba(93, 80, 198, 0.35);
-$shadow-floating-card: 0 12px 28px rgba(0, 0, 0, 0.08);
+$shadow-button-primary: 0 0.9375rem 1.875rem rgba($color-primary, 0.25);
+$shadow-button-primary-hover: 0 1.25rem 2.1875rem rgba($color-primary, 0.35);
+$shadow-badge-discount: 0 0.25rem 0.9375rem rgba($black, 0.05);
+$shadow-floating-card: 0 0.75rem 1.75rem rgba($black, 0.08);
+
+// ==========================================
+// Z-index variables
+// ==========================================
+$z-behind: -1;
+$z-default: 0;
+$z-base: 1;
+$z-content: 2;

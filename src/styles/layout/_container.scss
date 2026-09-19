@@ -1,8 +1,8 @@
-@use '@/styles/abstract' as *;
+@use '../abstract/mixins' as *;
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     padding: 0 1.5rem;
 

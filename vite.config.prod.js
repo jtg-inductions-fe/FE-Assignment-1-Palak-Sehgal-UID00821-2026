@@ -1,40 +1,48 @@
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import { defineConfig } from 'vite';
-import { fileURLToPath, URL } from 'node:url';
+import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
+    // eslint-disable-next-line no-undef
+    const env = loadEnv(mode, process.cwd(), '');
+
+    const PORT = Number(env.VITE_PORT) || 8080;
+
     return {
         plugins: [
             createHtmlPlugin({
                 minify: true,
             }),
             ViteImageOptimizer({
-                test: /\.(jpg|png|svg|webp)$/i,
+                test: /\.(png|svg)$/i,
                 includePublic: true,
                 logStats: true,
                 png: {
-                    quality: 90,
-                },
-                jpg: {
-                    quality: 90,
+                    quality: 80,
+                    compressionLevel: 9,
                 },
                 svg: {
-                    quality: 90,
-                },
-                webp: {
-                    quality: 90,
+                    multipass: true,
                 },
             }),
         ],
+        preview: {
+            port: PORT,
+            strictPort: false,
+        },
         build: {
-            emptyOutDir: true,
             rollupOptions: {
                 output: {
                     chunkFileNames: 'js/[name]-[hash].js',
                     entryFileNames: 'js/[name]-[hash].js',
                     assetFileNames: ({ name }) => {
-                        if (/\.(jpg|png)$/.test(name ?? '')) {
+                        if (
+                            /\.svg$/i.test(name ?? '') &&
+                            name?.includes('icons')
+                        ) {
+                            return 'icons/[name]-[hash][extname]';
+                        }
+                        if (/\.(png)$/.test(name ?? '')) {
                             return 'images/[name]-[hash][extname]';
                         }
                         if (/\.css$/.test(name ?? '')) {
@@ -47,22 +55,6 @@ export default defineConfig(() => {
                     },
                 },
             },
-        },
-        css: {
-            devSourcemap: true,
-        },
-        resolve: {
-            alias: {
-                '@': fileURLToPath(new URL('./src', import.meta.url)),
-                '@assets': fileURLToPath(
-                    new URL('./public/assets', import.meta.url),
-                ),
-            },
-        },
-        server: {
-            port: 3000,
-            open: true,
-            host: true,
         },
     };
 });

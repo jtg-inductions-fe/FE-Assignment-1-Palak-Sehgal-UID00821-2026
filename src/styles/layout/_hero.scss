@@ -1,36 +1,37 @@
-@use '@/styles/abstract' as *;
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .hero-test-wrapper {
     position: relative;
     min-height: 80vh;
-    padding: 40px 20px;
-    background-color: #ffffff;
-    overflow: hidden; // Glows ko container ke bahar overflow hone se rokta hai
+    padding: 2.5rem 1.25rem;
+    background-color: $color-white;
+    overflow: hidden;
 
     @include respond-to('tablet') {
-        padding: 80px 40px;
+        padding: 5rem 2.5rem;
     }
 }
 
 .badge-discount {
     display: inline-block;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ff5722;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem 1.25rem;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-large;
+    color: $color-accent-orange;
+    background: $color-white;
+    border-radius: 1.25rem;
+    box-shadow: $shadow-badge-discount;
 }
 
 .btn-primary {
-    padding: 12px 32px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-    background: var(--grad-btn-primary);
+    padding: 0.75rem 2rem;
+    font-size: $font-size-base;
+    font-weight: $font-weight-large;
+    color: $color-white;
+    background: $color-primary;
     border: none;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(93, 80, 230, 0.3);
+    box-shadow: $shadow-button-primary;
 }

@@ -1,4 +1,4 @@
-@use '@/styles/abstract' as *;
+@use '../abstract/mixins' as *;
 
 .brand-logos {
     display: flex;
@@ -22,7 +22,7 @@
         justify-content: center;
 
         img {
-            max-height: 32px;
+            max-height: 2rem;
             width: auto;
             object-fit: contain;
             opacity: 0.6;

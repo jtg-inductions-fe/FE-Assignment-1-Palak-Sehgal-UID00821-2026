@@ -1,12 +1,10 @@
 # Logs
-logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
+
 
 # Dependencies
 node_modules
+
 
 # Build & Vite Caches
 dist
@@ -14,9 +12,14 @@ dist-ssr
 .vite
 
 
+# Environment Files
+.env.development
+.env.production
+
+
 # Tooling Caches
 .eslintcache
-.husky/_
+
 
 # Editor directories and files
 .vscode/*
@@ -24,4 +27,3 @@ dist-ssr
 .idea
 .DS_Store
 Thumbs.db
-*.sw?
