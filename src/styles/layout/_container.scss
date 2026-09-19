@@ -1,0 +1,16 @@
+@use '../abstract/mixins' as *;
+
+.container {
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+    @include respond-to('tablet') {
+        padding: 0 2rem;
+    }
+
+    @include respond-to('desktop') {
+        padding: 0 2.5rem;
+    }
+}

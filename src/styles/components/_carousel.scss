@@ -1,0 +1,42 @@
+@use '../abstract/variables' as *;
+
+// Star Rating Component
+.rating-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .icon-star {
+        font-size: 1.25rem;
+        color: $color-yellow-star;
+    }
+}
+
+// Carousel Pagination Dots
+.carousel-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    .dot {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background-color: $color-dot-inactive;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition:
+            width 0.3s ease,
+            border-radius 0.3s ease,
+            background-color 0.3s ease;
+
+        &--active,
+        &.is-active {
+            width: 1.5rem;
+            border-radius: 6.25rem;
+            background-color: $color-dot-active;
+        }
+    }
+}

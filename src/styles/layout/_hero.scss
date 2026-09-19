@@ -1,0 +1,37 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.hero-test-wrapper {
+    position: relative;
+    min-height: 80vh;
+    padding: 2.5rem 1.25rem;
+    background-color: $color-white;
+    overflow: hidden;
+
+    @include respond-to('tablet') {
+        padding: 5rem 2.5rem;
+    }
+}
+
+.badge-discount {
+    display: inline-block;
+    padding: 2.5rem 1.25rem;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-large;
+    color: $color-accent-orange;
+    background: $color-white;
+    border-radius: 1.25rem;
+    box-shadow: $shadow-badge-discount;
+}
+
+.btn-primary {
+    padding: 0.75rem 2rem;
+    font-size: $font-size-base;
+    font-weight: $font-weight-large;
+    color: $color-white;
+    background: $color-primary;
+    border: none;
+    border-radius: 1.875rem;
+    cursor: pointer;
+    box-shadow: $shadow-button-primary;
+}
