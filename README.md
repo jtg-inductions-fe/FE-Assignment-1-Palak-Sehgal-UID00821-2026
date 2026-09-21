@@ -39,7 +39,22 @@ To set up the project on your local environment, follow these steps:
     npm install
     ```
 
-4. **Run the Development Server**
+4. **Environment Variables Setup**
+
+    Create `.env.development` and `.env.production` files in the root directory if they don't exist.
+
+    **For Development (`.env.development`)**:
+    ```env
+    VITE_PORT=3000
+    ```
+
+    **For Production (`.env.production`)**:
+    ```env
+    VITE_PORT=8080
+    ```
+
+
+5. **Run the Development Server**
 
     ```bash
     npm run dev
@@ -55,7 +70,7 @@ To set up the project on your local environment, follow these steps:
     }
     ```
 
-5. **Build the Project**
+6. **Build the Project**
 
     ```bash
     npm run build
@@ -63,7 +78,7 @@ To set up the project on your local environment, follow these steps:
 
     This command will scan the project and check for any lint errors.
 
-6. **Lint the Code**
+7. **Lint the Code**
 
     ```bash
     npm run lint
@@ -71,7 +86,7 @@ To set up the project on your local environment, follow these steps:
 
     This command will generate the optimized files in the dist directory.
 
-7. **Fix Linting Errors**
+8. **Fix Linting Errors**
 
     ```bash
     npm run lint:fix
@@ -79,7 +94,7 @@ To set up the project on your local environment, follow these steps:
 
     This command will automatically fix ESLint errors across the project.
 
-8. **Code Formatting (Prettier)**
+9. **Code Formatting (Prettier)**
 
    ```bash
     npm run prettier
@@ -87,7 +102,7 @@ To set up the project on your local environment, follow these steps:
 
    This command will automatically format all files using Prettier.
 
-9. **Preview Production Build**
+10. **Preview Production Build**
 
     ```bash
     npm run preview
