@@ -26,8 +26,18 @@ select {
     font: inherit;
     color: inherit;
     border: none;
-    outline: none;
     background: none;
+    /* global outline: none hata kar :focus-visible rules handle karenge */
+}
+
+/* Focus styles for keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
 }
 
 /* 4. Lists & Links Reset */

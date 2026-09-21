@@ -6,7 +6,8 @@
     align-items: center;
     gap: 0.5rem;
 
-    .icon-star {
+    .icon-star,
+    &__icon-star {
         font-size: 1.25rem;
         color: $color-yellow-star;
     }
@@ -19,7 +20,7 @@
     justify-content: center;
     gap: 0.75rem;
 
-    .dot {
+    &__dot {
         width: 0.75rem;
         height: 0.75rem;
         border-radius: 50%;
@@ -32,6 +33,7 @@
             border-radius 0.3s ease,
             background-color 0.3s ease;
 
+        // BEM modifier syntax for active state
         &--active,
         &.is-active {
             width: 1.5rem;
