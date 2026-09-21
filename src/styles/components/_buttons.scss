@@ -1,4 +1,5 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .btn {
     display: inline-flex;
@@ -50,5 +51,15 @@
             color: $color-white;
             border-color: $color-primary;
         }
+    }
+
+    @include respond-to('tablet') {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.65rem;
+    }
+
+    @include respond-to('desktop') {
+        padding: 1rem 2.1rem;
+        font-size: $font-size-sm;
     }
 }

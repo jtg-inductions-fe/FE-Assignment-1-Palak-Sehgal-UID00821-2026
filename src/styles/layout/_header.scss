@@ -61,6 +61,7 @@
             flex-direction: column;
             gap: 1.5rem;
             align-items: center;
+            z-index: $z-nav;
         }
     }
 
@@ -93,16 +94,42 @@
     }
 
     @include respond-to('tablet') {
+        &__container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            width: 100%;
+            padding: 0 2.5rem;
+        }
         &__toggle {
             order: 1;
+            justify-self: start;
+            height: 1rem;
+
+            &-icon {
+                font-size: 2.1rem;
+                color: $color-white;
+                line-height: 1;
+                display: inline-block;
+            }
         }
 
         &__logo {
             order: 2;
+            justify-self: center;
+            margin: 0;
+
+            &-img {
+                width: auto;
+                height: 1.9rem;
+                max-width: 100%;
+                object-fit: contain;
+            }
         }
 
         &__actions {
             order: 3;
+            justify-self: end;
             display: flex;
             align-items: center;
         }
@@ -182,12 +209,12 @@
                 font-weight: 700;
                 opacity: 1;
             }
-            &__actions {
-                order: 3;
-                display: flex;
-                align-items: center;
-                flex-shrink: 0;
-            }
+        }
+        &__actions {
+            order: 3;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
         }
     }
 }
