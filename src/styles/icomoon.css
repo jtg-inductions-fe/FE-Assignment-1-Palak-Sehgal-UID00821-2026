@@ -12,7 +12,7 @@
 [class*=' icon-'] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: never;
+    speak-as: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -24,6 +24,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-hamburger:before {
+    content: '\e909';
+    color: #5d50c6;
+}
 .icon-bag:before {
     content: '\e900';
     color: #f85e9f;

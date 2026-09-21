@@ -12,6 +12,7 @@ $color-accent-orange: $orange;
 // 2. Text Colors
 $color-text-dark: $black;
 $color-text-muted: $dark-gray;
+$color-text-active: $dark-gray-active;
 
 $color-yellow-star: $yellow;
 $color-dot-inactive: rgba($color-text-muted, 0.1);
@@ -93,3 +94,4 @@ $z-behind: -1;
 $z-default: 0;
 $z-base: 1;
 $z-content: 2;
+$z-nav: 100;

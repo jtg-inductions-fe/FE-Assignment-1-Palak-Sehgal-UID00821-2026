@@ -1,0 +1,193 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.header {
+    width: 100%;
+    padding: 1.25rem 1rem;
+    position: relative;
+    z-index: $z-nav;
+
+    &__container {
+        display: flex;
+        padding: 0.79rem 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: inline-flex;
+        order: 1;
+
+        &-img {
+            width: auto;
+            height: 2.25rem;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__toggle {
+        order: 2;
+        border: none;
+        border-radius: 50%;
+        width: 0.9375rem;
+        height: 2.4375rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &-icon {
+            font-size: 2.7rem;
+            color: $color-white;
+            line-height: 1;
+            display: inline-block;
+        }
+    }
+
+    // Default hidden on mobile
+    &__nav {
+        display: none;
+        // When Hamburger is clicked -> Menu opens
+        &--open {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: $color-white;
+            padding: 1.5rem;
+            border-radius: 0 0 1rem 1rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+    }
+
+    &__actions {
+        display: none;
+
+        // Optional: Show Auth buttons inside menu on mobile
+        &--open {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    @include respond-to('tablet') {
+        &__toggle {
+            order: 1;
+        }
+
+        &__logo {
+            order: 2;
+        }
+
+        &__actions {
+            order: 3;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    @include respond-to('desktop') {
+        padding: 3.1rem 1rem;
+
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__toggle {
+            display: none;
+        }
+
+        &__logo {
+            order: 1;
+            flex-shrink: 0;
+
+            &-img {
+                width: auto;
+                height: 2.5rem;
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__nav {
+            order: 2;
+            display: flex;
+            position: static;
+            padding: 0;
+            background: transparent;
+
+            margin-left: 0;
+            margin-right: 0;
+
+            &--open {
+                position: static;
+                box-shadow: none;
+                padding: 0;
+                background: transparent;
+                flex-direction: row;
+            }
+        }
+
+        &__nav-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+            margin: 0;
+            padding-right: 0.5rem;
+        }
+
+        &__nav-link {
+            font-family:
+                'Circular Std',
+                -apple-system,
+                BlinkMacSystemFont,
+                Roboto,
+                sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0;
+            color: $color-text-muted;
+            opacity: 0.5;
+            text-decoration: none;
+            white-space: nowrap;
+
+            &--active {
+                color: $color-text-active;
+                font-weight: 700;
+                opacity: 1;
+            }
+            &__actions {
+                order: 3;
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+            }
+        }
+    }
+}

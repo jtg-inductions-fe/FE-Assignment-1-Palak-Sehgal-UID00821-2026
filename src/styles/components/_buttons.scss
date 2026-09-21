@@ -45,7 +45,7 @@
         border: $border-translucent-dark;
         background: $color-white;
 
-        &--active {
+        &.is-active {
             background: $color-primary;
             color: $color-white;
             border-color: $color-primary;
