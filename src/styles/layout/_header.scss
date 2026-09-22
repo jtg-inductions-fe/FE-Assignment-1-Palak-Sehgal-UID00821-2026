@@ -30,8 +30,8 @@
         order: 2;
         border: none;
         border-radius: 50%;
-        width: 0.9375rem;
-        height: 2.4375rem;
+        width: 2.75rem;
+        height: 2.75rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -52,7 +52,7 @@
         &--open {
             display: flex;
             position: absolute;
-            top: 100%;
+            top: 80%;
             left: 0;
             width: 100%;
             background-color: $color-white;
