@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.querySelector('.header__toggle');
     const navMenu = document.querySelector('.header__nav');
+    const navActions = document.querySelector('.header__actions');
 
     if (toggleBtn && navMenu) {
         toggleBtn.addEventListener('click', () => {
             // Toggle open class
             navMenu.classList.toggle('header__nav--open');
-
+            if (navActions) {
+                navActions.classList.toggle('header__actions--open');
+            }
             // Accessibility (aria-expanded update)
             const isExpanded = navMenu.classList.contains('header__nav--open');
             toggleBtn.setAttribute('aria-expanded', isExpanded);
