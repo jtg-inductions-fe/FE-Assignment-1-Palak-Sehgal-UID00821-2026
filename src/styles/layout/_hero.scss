@@ -1,4 +1,5 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .hero {
     padding: 1.6rem 1rem 3rem;
@@ -37,7 +38,6 @@
     }
     &__card {
         border-radius: 1.027rem;
-        overflow: hidden;
         box-shadow: $shadow-floating-card;
         position: relative;
         z-index: $z-base;
@@ -136,5 +136,61 @@
         flex-direction: column;
         width: 110%;
         gap: 2rem;
+    }
+
+    @include respond-to('tablet') {
+        padding: 3rem 2rem;
+        position: relative;
+
+        &__container {
+            gap: 4rem;
+        }
+        &__globe-bg {
+            width: 120%;
+        }
+        &__card {
+            &--1 {
+                width: 12.5rem;
+                height: 14rem;
+            }
+            &--2 {
+                width: 12.5rem;
+                height: 14rem;
+            }
+            &--3 {
+                width: 12.5rem;
+                height: 19rem;
+            }
+        }
+        &__gallery {
+            padding: 3.5rem 1.6rem;
+            max-width: 30rem;
+            row-gap: 1.6rem;
+        }
+        .floating-icon {
+            .icon-paper-plane,
+            .icon-user {
+                font-size: 4rem;
+            }
+        }
+
+        &__badge-send {
+            position: absolute;
+            top: 12rem;
+            left: -2rem;
+        }
+        &__title {
+            font-size: 3.25rem;
+        }
+
+        &__actions {
+            flex-direction: row;
+            justify-content: center;
+            width: auto;
+        }
+
+        &__btn {
+            width: auto;
+        }
     }
 }
