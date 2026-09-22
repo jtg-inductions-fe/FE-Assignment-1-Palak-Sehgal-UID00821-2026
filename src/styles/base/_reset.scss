@@ -30,23 +30,8 @@ select {
     /* global outline: none hata kar :focus-visible rules handle karenge */
 }
 
-/* Focus styles for keyboard accessibility */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-}
-
 /* 4. Lists & Links Reset */
 ul,
 ol {
     list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }

@@ -34,7 +34,6 @@
             background-color 0.3s ease;
 
         // BEM modifier syntax for active state
-        &--active,
         &.is-active {
             width: 1.5rem;
             border-radius: 6.25rem;

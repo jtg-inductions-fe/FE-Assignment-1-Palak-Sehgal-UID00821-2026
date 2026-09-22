@@ -60,15 +60,21 @@ To set up the project on your local environment, follow these steps:
     npm run dev
     ```
 
-    The app will typically be available at http://localhost:3000, but check the terminal output for the exact URL.
+    The app will typically be available at `http://localhost:3000`, but check the terminal output for the exact URL.
 
-    > **_NOTE:_** Note: If you want to change the server's port number, you can do so by modifying the **vite.config.js** file at the root level of the project:
-
-    ```js
-    server{
-        port:<New Port>,
-    }
-    ```
+    > **_NOTE:_** The preferred way to change the development server's port number is by setting `VITE_PORT` in your environment file (`.env.development`):
+    >
+    > ```env
+    > VITE_PORT=<New Port>
+    > ```
+    >
+    > Alternatively, you can modify the server options directly in **vite.config.dev.js** at the root level of the project:
+    >
+    > ```js
+    > server: {
+    >   port: <New Port>,
+    > }
+    > ```
 
 6. **Build the Project**
 
@@ -76,15 +82,15 @@ To set up the project on your local environment, follow these steps:
     npm run build
     ```
 
-    This command will scan the project and check for any lint errors.
+    This command will generate the optimized files in the dist directory.
 
 7. **Lint the Code**
 
     ```bash
     npm run lint
     ```
-
-    This command will generate the optimized files in the dist directory.
+    This command will scan the project and check for any lint errors.
+    
 
 8. **Fix Linting Errors**
 

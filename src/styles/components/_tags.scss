@@ -36,7 +36,7 @@
     box-shadow: $shadow-floating-card;
     font-weight: $font-weight-bold;
     font-size: $font-size-xs;
-    z-index: var(--z-index-content);
+    z-index: $z-content;
 }
 
 // Floating Circular Icon Badges
@@ -49,7 +49,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: $shadow-floating-card;
-    z-index: var(--z-index-content);
+    z-index: $z-content;
 
     &--pink {
         background-color: $color-secondary;
