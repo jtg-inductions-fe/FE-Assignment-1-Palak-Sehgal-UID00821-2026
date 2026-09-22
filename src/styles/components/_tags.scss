@@ -1,5 +1,7 @@
 @use '../abstract/variables' as *;
 @use '../abstract/colors' as *;
+@use '../abstract/mixins' as *;
+
 .section-tag {
     color: $color-secondary;
     font-size: $font-size-sm;
@@ -48,6 +50,9 @@
     .icon-location {
         font-size: $font-size-sm;
         color: $yellow;
+    }
+    @include respond-to('tablet') {
+        padding: 0.8rem 2rem;
     }
 }
 
