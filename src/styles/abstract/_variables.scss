@@ -56,6 +56,7 @@ $font-weight-bold: 700;
 $font-weight-black: 900;
 
 // Font Sizes
+$font-badge-floating: 0.449375rem;
 $font-size-xs: 0.75rem; // 12px
 $font-size-sm: 0.875rem; // 14px
 $font-size-base: 1rem; // 16px
@@ -82,10 +83,12 @@ $border-translucent-dark: 0.0625rem solid rgba($color-text-muted, 0.1);
 // ==========================================
 // SHADOWS
 // ==========================================
-$shadow-button-primary: 0 0.9375rem 1.875rem rgba($color-primary, 0.25);
+$shadow-button-primary: 0 0.875rem 1.75rem -0.25rem rgba(0, 0, 0, 0.25);
 $shadow-button-primary-hover: 0 1.25rem 2.1875rem rgba($color-primary, 0.35);
 $shadow-badge-discount: 0 0.25rem 0.9375rem rgba($black, 0.05);
 $shadow-floating-card: 0 0.75rem 1.75rem rgba($black, 0.08);
+$shadow-icon: 0 0.5rem 0.0625rem rgba($black, 0.12);
+$shadow-tags: 0 0.75rem 5rem rgba(0, 0, 0, 0.08);
 
 // ==========================================
 // Z-index variables
@@ -94,4 +97,5 @@ $z-behind: -1;
 $z-default: 0;
 $z-base: 1;
 $z-content: 2;
+$z-floating-icon: 3;
 $z-nav: 100;
