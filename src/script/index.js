@@ -1,3 +1,9 @@
+/**
+ * Initializes the header navigation toggling and mobile menu state.
+ * Handles menu toggle interaction and outside click handler for accessibility.
+ *
+ * @returns {void}
+ */
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.querySelector('.header__toggle');
     const navMenu = document.querySelector('.header__nav');
