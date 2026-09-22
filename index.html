@@ -65,10 +65,98 @@
         <link rel="stylesheet" href="/src/styles/main.scss" />
     </head>
     <body>
-        <main class="container">
-            <!-- 1. Buttons Usage -->
-            <div>Travlog</div>
-        </main>
+        <header class="header">
+            <div class="header__container container">
+                <!-- Toggle Button-->
+                <button
+                    class="header__toggle"
+                    type="button"
+                    aria-label="Toggle Navigation"
+                    aria-expanded="false"
+                >
+                    <i class="icon-hamburger header__toggle-icon"></i>
+                </button>
+
+                <!-- Brand Logo -->
+                <a href="/" class="header__logo">
+                    <img
+                        src="/assets/icons/travlog-logo-header.svg"
+                        alt="Travel Logo"
+                        class="header__logo-img"
+                    />
+                </a>
+
+                <!-- Navigation Menu -->
+                <nav class="header__nav" id="primary-navigation">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a
+                                href="#home"
+                                class="header__nav-link header__nav-link--active"
+                                title="Go to Home Page"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="header__nav-item">
+                            <a
+                                href="#discover"
+                                class="header__nav-link"
+                                title="Go to Discover Page"
+                                >Discover</a
+                            >
+                        </li>
+                        <li class="header__nav-item">
+                            <a
+                                href="#deals"
+                                class="header__nav-link"
+                                title="Go to Special Deals Page"
+                                >Special Deals</a
+                            >
+                        </li>
+                        <li class="header__nav-item">
+                            <a
+                                href="#contact"
+                                class="header__nav-link"
+                                title="Go to Contact Page"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                    <!-- Auth Actions -->
+                    <div class="header__actions header__actions--mobile">
+                        <a
+                            href="#login"
+                            class="btn btn--tertiary"
+                            title="Go to Login Page"
+                            >Log In</a
+                        >
+                        <a
+                            href="#signup"
+                            class="btn btn--primary"
+                            title="Go to Signup Page"
+                            >Sign Up</a
+                        >
+                    </div>
+                </nav>
+
+                <!-- Auth Actions -->
+                <div class="header__actions header__actions--desktop">
+                    <a
+                        href="#login"
+                        class="btn btn--tertiary"
+                        title="Go to Login Page"
+                        >Log In</a
+                    >
+                    <a
+                        href="#signup"
+                        class="btn btn--primary"
+                        title="Go to Signup Page"
+                        >Sign Up</a
+                    >
+                </div>
+            </div>
+        </header>
+        <main class="container"></main>
 
         <script type="module" src="/src/script/index.js"></script>
     </body>

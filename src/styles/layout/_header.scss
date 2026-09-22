@@ -1,0 +1,244 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.header {
+    width: 100%;
+    padding: 1.25rem 1rem;
+    position: relative;
+    z-index: $z-nav;
+
+    &__container {
+        display: flex;
+        padding: 0.79rem 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: inline-flex;
+        order: 1;
+
+        &-img {
+            width: auto;
+            height: 2.25rem;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__toggle {
+        order: 2;
+        border: none;
+        border-radius: 50%;
+        width: 2.75rem;
+        height: 2.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &-icon {
+            font-size: 2.7rem;
+            color: $color-white;
+            line-height: 1;
+            display: inline-block;
+        }
+    }
+    &__actions--mobile {
+        display: none;
+    }
+
+    // Tablet & Desktop Auth Actions
+    &__actions--desktop {
+        display: none; // Mobile par hidden
+    }
+    // Default hidden on mobile
+    &__nav {
+        display: none;
+        // When Hamburger is clicked -> Menu opens
+        &--open {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: $color-white;
+            padding: 2rem 1.5rem;
+            border-radius: 0 0 1rem 1rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            z-index: $z-nav;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+            // Nav open hone par inner actions buttons automatically flex show honge
+            .header__actions {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 0.75rem;
+                align-items: center;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    &__actions {
+        display: none;
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    @include respond-to('tablet') {
+        &__actions--mobile {
+            display: none !important; // Tablet par mobile buttons permanent hide
+        }
+
+        &__actions--desktop {
+            order: 3;
+            justify-self: end;
+            display: flex; // Tablet par top bar wapas show ho jayegi
+            align-items: center;
+        }
+        &__container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            width: 100%;
+            padding: 0 2.5rem;
+        }
+        &__toggle {
+            order: 1;
+            justify-self: start;
+            width: 1rem;
+
+            &-icon {
+                font-size: 2.1rem;
+                color: $color-white;
+                line-height: 1;
+                display: inline-block;
+            }
+        }
+
+        &__logo {
+            order: 2;
+            justify-self: center;
+            margin: 0;
+
+            &-img {
+                width: auto;
+                height: 1.9rem;
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__actions {
+            order: 3;
+            justify-self: end;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    @include respond-to('desktop') {
+        padding: 4rem 5.7rem;
+        &__actions--desktop {
+            order: 3;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__toggle {
+            display: none;
+        }
+
+        &__logo {
+            order: 1;
+            flex-shrink: 0;
+
+            &-img {
+                width: auto;
+                height: 2.5rem;
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__nav {
+            order: 2;
+            display: flex;
+            position: static;
+            padding: 0;
+            background: transparent;
+
+            margin-left: 0;
+            margin-right: 0;
+
+            &--open {
+                position: static;
+                box-shadow: none;
+                padding: 0;
+                background: transparent;
+                flex-direction: row;
+            }
+        }
+
+        &__nav-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+            margin: 0;
+            padding-right: 0.5rem;
+        }
+
+        &__nav-link {
+            font-family:
+                'Circular Std',
+                -apple-system,
+                BlinkMacSystemFont,
+                Roboto,
+                sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0;
+            color: $color-text-muted;
+            opacity: 0.5;
+            text-decoration: none;
+            white-space: nowrap;
+
+            &--active {
+                color: $color-text-active;
+                font-weight: 700;
+                opacity: 1;
+            }
+        }
+        &__actions {
+            order: 3;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+    }
+}

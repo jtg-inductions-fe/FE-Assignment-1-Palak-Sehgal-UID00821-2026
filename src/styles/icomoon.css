@@ -24,6 +24,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-hamburger:before {
+    content: '\e909';
+    color: #5d50c6;
+}
 .icon-bag:before {
     content: '\e900';
     color: #f85e9f;
