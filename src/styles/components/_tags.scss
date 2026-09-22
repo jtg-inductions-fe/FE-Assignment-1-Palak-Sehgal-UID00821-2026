@@ -1,6 +1,5 @@
 @use '../abstract/variables' as *;
 
-// Section Subtitle ("TRAVEL POINT", "TESTIMONIALS")
 .section-tag {
     color: $color-secondary;
     font-size: $font-size-sm;
@@ -36,33 +35,25 @@
     box-shadow: $shadow-floating-card;
     font-weight: $font-weight-bold;
     font-size: $font-size-xs;
-    z-index: var(--z-index-content);
+    z-index: $z-content;
 }
 
 // Floating Circular Icon Badges
 .floating-icon {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+    z-index: $z-content;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: $shadow-floating-card;
-    z-index: var(--z-index-content);
+    line-height: 1;
 
-    &--pink {
-        background-color: $color-secondary;
-        color: $color-white;
+    // Drop-shadow drop kar do direct icon/circle shapes par
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.12));
+
+    .icon-paper-plane,
+    .icon-user {
+        font-size: 3.5rem; // Circle and icon scale controller
+        display: block;
     }
-
-    &--orange {
-        background-color: $color-accent-orange;
-        color: $color-white;
-    }
-
-    &--yellow {
-        background-color: $color-yellow-star;
-        color: $color-white;
+    .icon-user .path2:before {
+        margin-left: -1.2em !important;
     }
 }
