@@ -1,0 +1,38 @@
+@use '../abstract/variables' as *;
+
+.glow-bg-pink {
+    position: absolute;
+    top: -6.25rem;
+    left: -6.25rem;
+    width: 21.875rem;
+    height: 21.875rem;
+    border-radius: 50%;
+    background: $grad-mesh-orange;
+    filter: blur(3.125rem);
+    pointer-events: none;
+    z-index: var(--z-index-base);
+}
+
+.glow-bg-yellow {
+    position: relative;
+    z-index: var(--z-index-base);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 21.875rem;
+        height: 31.25rem;
+        background: $grad-mesh-yellow-right-center;
+        filter: blur(2.5rem);
+        pointer-events: none;
+        z-index: var(--z-index-behind);
+    }
+}
+
+// Text Highlight Utility
+.text-highlight {
+    color: $color-secondary;
+}

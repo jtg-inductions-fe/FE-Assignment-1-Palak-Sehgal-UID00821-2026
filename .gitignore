@@ -1,15 +1,29 @@
 # Logs
-logs
 *.log
-npm-debug.log*
 
-# Files
+
+# Dependencies
 node_modules
+
+
+# Build & Vite Caches
 dist
+dist-ssr
+.vite
+
+
+# Environment Files
+.env.development
+.env.production
+
+
+# Tooling Caches
+.eslintcache
+
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
-*.sw?
+Thumbs.db

@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
--   **Node.js**: Version 18+ or 20+. You can download and install it from nodejs.org.
+-   **Node.js**: Version 20+. You can download and install it from https://nodejs.org/en
 -   **npm**: Node.js package manager, which comes bundled with Node.js.
 
 ### Installing
@@ -12,8 +12,10 @@ To set up the project on your local environment, follow these steps:
 1. **Clone the Repository**
 
     First, you need to clone the repository.
+    HTTPS: https://github.com/jtg-inductions-fe/FE-Assignment-1-Palak-Sehgal-UID00821-2026.git
+    SSH: git@github.com:jtg-inductions-fe/FE-Assignment-1-Palak-Sehgal-UID00821-2026.git
 
-2. **nvm (Node Version Manager)**: If the required Node version 18+ is already installed and active, you can skip this step else you can use nvm (Node Version Manager). Here's how to use it:
+2. **nvm (Node Version Manager)**: If the required Node version 20+ is already installed and active, you can skip this step else you can use nvm (Node Version Manager). Here's how to use it:
 
     - **Switch Node Version**: If the required Node version is already installed, run:
 
@@ -37,23 +39,44 @@ To set up the project on your local environment, follow these steps:
     npm install
     ```
 
-4. **Run the Development Server**
+4. **Environment Variables Setup**
+
+    Create `.env.development` and `.env.production` files in the root directory if they don't exist.
+
+    **For Development (`.env.development`)**:
+    ```env
+    VITE_PORT=3000
+    ```
+
+    **For Production (`.env.production`)**:
+    ```env
+    VITE_PORT=8080
+    ```
+
+
+5. **Run the Development Server**
 
     ```bash
     npm run dev
     ```
 
-    The app will typically be available at http://localhost:3000, but check the terminal output for the exact URL.
+    The app will typically be available at `http://localhost:3000`, but check the terminal output for the exact URL.
 
-    > **_NOTE:_** Note: If you want to change the server's port number, you can do so by modifying the **vite.config.js** file at the root level of the project:
+    > **_NOTE:_** The preferred way to change the development server's port number is by setting `VITE_PORT` in your environment file (`.env.development`):
+    >
+    > ```env
+    > VITE_PORT=<New Port>
+    > ```
+    >
+    > Alternatively, you can modify the server options directly in **vite.config.dev.js** at the root level of the project:
+    >
+    > ```js
+    > server: {
+    >   port: <New Port>,
+    > }
+    > ```
 
-    ```js
-    server{
-        port:<New Port>,
-    }
-    ```
-
-5. **Build the Project**
+6. **Build the Project**
 
     ```bash
     npm run build
@@ -61,7 +84,34 @@ To set up the project on your local environment, follow these steps:
 
     This command will generate the optimized files in the dist directory.
 
-6. **Lint the Code**
+7. **Lint the Code**
+
     ```bash
     npm run lint
     ```
+    This command will scan the project and check for any lint errors.
+    
+
+8. **Fix Linting Errors**
+
+    ```bash
+    npm run lint:fix
+    ```
+
+    This command will automatically fix ESLint errors across the project.
+
+9. **Code Formatting (Prettier)**
+
+   ```bash
+    npm run prettier
+    ```
+
+   This command will automatically format all files using Prettier.
+
+10. **Preview Production Build**
+
+    ```bash
+    npm run preview
+    ```
+
+    This command will preview the built application locally (after running npm run build) run this.

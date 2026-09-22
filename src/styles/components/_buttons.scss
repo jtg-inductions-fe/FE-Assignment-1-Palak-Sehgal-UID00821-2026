@@ -1,0 +1,54 @@
+@use '../abstract/variables' as *;
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-family: $font-family-heading;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-sm;
+    border-radius: 6.25rem;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: $shadow-button-primary;
+        &:hover {
+            transform: translateY(-0.125rem);
+            box-shadow: $shadow-button-primary-hover;
+        }
+    }
+
+    &--outline {
+        background: transparent;
+        border: $border-translucent-dark;
+        color: $color-text-dark;
+
+        &:hover {
+            border-color: $color-primary;
+            color: $color-primary;
+        }
+    }
+
+    &--icon-circle {
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 0;
+        border-radius: 50%;
+        border: $border-translucent-dark;
+        background: $color-white;
+
+        &--active {
+            background: $color-primary;
+            color: $color-white;
+            border-color: $color-primary;
+        }
+    }
+}
