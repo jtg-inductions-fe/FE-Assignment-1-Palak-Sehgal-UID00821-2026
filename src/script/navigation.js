@@ -14,6 +14,22 @@ export const initNavigation = () => {
             toggleBtn.setAttribute('aria-expanded', isOpen);
         };
 
+        navMenu.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                setMenuState(false);
+            }
+        });
+
+        // 2. Escape key navigation
+        document.addEventListener('keydown', (event) => {
+            const isExpanded =
+                toggleBtn.getAttribute('aria-expanded') === 'true';
+            if (event.key === 'Escape' && isExpanded) {
+                setMenuState(false);
+                toggleBtn.focus();
+            }
+        });
+
         toggleBtn.addEventListener('click', () => {
             const isExpanded =
                 toggleBtn.getAttribute('aria-expanded') === 'true';
