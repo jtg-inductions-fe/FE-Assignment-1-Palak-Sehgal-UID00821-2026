@@ -65,6 +65,7 @@
         <link rel="stylesheet" href="/src/styles/main.scss" />
     </head>
     <body>
+        <span class="glow-bg-pink" aria-hidden="true"></span>
         <header class="header">
             <div class="header__container container">
                 <!-- Toggle Button-->
@@ -73,15 +74,19 @@
                     type="button"
                     aria-label="Toggle Navigation"
                     aria-expanded="false"
+                    aria-controls="primary-navigation"
                 >
-                    <i class="icon-hamburger header__toggle-icon"></i>
+                    <i
+                        class="icon-hamburger header__toggle-icon"
+                        aria-hidden="true"
+                    ></i>
                 </button>
 
                 <!-- Brand Logo -->
                 <a href="/" class="header__logo">
                     <img
                         src="/assets/icons/travlog-logo-header.svg"
-                        alt="Travel Logo"
+                        alt="Travlog"
                         class="header__logo-img"
                     />
                 </a>
@@ -124,10 +129,7 @@
                     </ul>
                     <!-- Auth Actions -->
                     <div class="header__actions header__actions--mobile">
-                        <a
-                            href="#login"
-                            class="btn btn--tertiary"
-                            title="Go to Login Page"
+                        <a href="#login" class="btn" title="Go to Login Page"
                             >Log In</a
                         >
                         <a
@@ -141,10 +143,7 @@
 
                 <!-- Auth Actions -->
                 <div class="header__actions header__actions--desktop">
-                    <a
-                        href="#login"
-                        class="btn btn--tertiary"
-                        title="Go to Login Page"
+                    <a href="#login" class="btn" title="Go to Login Page"
                         >Log In</a
                     >
                     <a
@@ -156,7 +155,138 @@
                 </div>
             </div>
         </header>
-        <main class="container"></main>
+        <main class="container">
+            <section class="hero" id="home">
+                <div class="hero__container">
+                    <!-- Text & Action Content -->
+                    <div class="hero__content">
+                        <!-- Decorative Triangles Icon -->
+                        <img
+                            src="/assets/icons/triangle-grid.svg"
+                            alt="Decorative triangle pattern grid"
+                            aria-hidden="true"
+                            class="hero__triangles-decor"
+                        />
+                        <div class="tag-pill hero__pill">
+                            <span>Explore the world!</span>
+                            <i class="icon-bag" aria-hidden="true"></i>
+                        </div>
+
+                        <h1 class="hero__title">
+                            Travel
+                            <span class="hero__title-accent"
+                                >top destination</span
+                            >
+                            of the world
+                        </h1>
+
+                        <p class="hero__description">
+                            We always make our customer happy by providing as
+                            many choices as possible
+                        </p>
+
+                        <div class="hero__actions">
+                            <a
+                                href="#get-started"
+                                class="btn btn--primary hero__btn"
+                                >Get Started</a
+                            >
+                            <a
+                                href="#watch-demo"
+                                class="btn btn--outline hero__btn-demo"
+                            >
+                                <span class="hero__demo-icon-wrapper">
+                                    <i
+                                        class="icon-watch"
+                                        aria-hidden="true"
+                                    ></i>
+                                </span>
+                                <span>Watch Demo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Graphic / Image Gallery Grid -->
+                    <div class="hero__gallery">
+                        <img
+                            src="/assets/icons/bg-globe-map.svg"
+                            alt="Globe background illustration"
+                            aria-hidden="true"
+                            class="hero__globe-bg"
+                        />
+                        <div class="hero__card hero__card--1">
+                            <div>
+                                <img
+                                    src="/assets/images/sea-view-mobile.png"
+                                    srcset="
+                                        /assets/images/sea-view-mobile.png  280w,
+                                        /assets/images/sea-view-desktop.png 544w
+                                    "
+                                    sizes="(min-width: 1025px) 270px, (min-width: 431px) 180px, 140px"
+                                    alt="Ocean view resort"
+                                    class="hero__img"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            </div>
+                            <!-- Floating UI Accents & Badges -->
+                            <div
+                                class="floating-icon hero__badge-send"
+                                aria-hidden="true"
+                            >
+                                <span class="icon-paper-plane"
+                                    ><span class="path1"></span
+                                    ><span class="path2"></span
+                                ></span>
+                            </div>
+                        </div>
+                        <div class="hero__card hero__card--2">
+                            <img
+                                src="/assets/images/mountain-view-girl-mobile.png"
+                                srcset="
+                                    /assets/images/mountain-view-girl-mobile.png  280w,
+                                    /assets/images/mountain-view-girl-desktop.png 544w
+                                "
+                                sizes="(min-width: 1025px) 270px, (min-width: 431px) 180px, 140px"
+                                alt="Hiking top mountain"
+                                class="hero__img"
+                                loading="eager"
+                                decoding="async"
+                            />
+                        </div>
+                        <div class="hero__card hero__card--3">
+                            <img
+                                src="/assets/images/traveller-girl-mobile.png"
+                                srcset="
+                                    /assets/images/traveller-girl-mobile.png  280w,
+                                    /assets/images/traveller-girl-desktop.png 544w
+                                "
+                                sizes="(min-width: 1025px) 270px, (min-width: 431px) 180px, 140px"
+                                alt="Traveler with backpack"
+                                class="hero__img"
+                                loading="eager"
+                                decoding="async"
+                            />
+                        </div>
+
+                        <div
+                            class="floating-icon floating-icon--orange hero__badge-user"
+                            aria-hidden="true"
+                        >
+                            <span class="icon-user">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </span>
+                        </div>
+
+                        <div class="badge-floating hero__badge-location">
+                            <i class="icon-location" aria-hidden="true"></i>
+                            <span>Top Places</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <script type="module" src="/src/script/index.js"></script>
     </body>

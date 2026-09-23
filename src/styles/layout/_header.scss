@@ -8,10 +8,8 @@
     z-index: $z-nav;
 
     &__container {
-        display: flex;
+        @include flex-layout($align: center, $justify: space-between);
         padding: 0.79rem 0;
-        align-items: center;
-        justify-content: space-between;
     }
 
     &__logo {
@@ -32,9 +30,7 @@
         border-radius: 50%;
         width: 2.75rem;
         height: 2.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-layout($align: center, $justify: center);
         cursor: pointer;
 
         &-icon {
@@ -57,7 +53,6 @@
         display: none;
         // When Hamburger is clicked -> Menu opens
         &--open {
-            display: flex;
             position: absolute;
             top: 100%;
             left: 0;
@@ -65,20 +60,16 @@
             background-color: $color-white;
             padding: 2rem 1.5rem;
             border-radius: 0 0 1rem 1rem;
-            flex-direction: column;
             gap: 1.5rem;
-            align-items: center;
             z-index: $z-nav;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-
+            box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+            @include flex-layout($direction: column, $align: center);
             // Nav open hone par inner actions buttons automatically flex show honge
             .header__actions {
-                display: flex;
-                flex-direction: column;
                 width: 100%;
                 gap: 0.75rem;
-                align-items: center;
                 margin-top: 0.5rem;
+                @include flex-layout($direction: column, $align: center);
             }
         }
     }
@@ -88,9 +79,7 @@
     }
 
     &__nav-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-layout($direction: column, $align: center);
         gap: 1.5rem;
         list-style: none;
         margin: 0;
@@ -104,27 +93,27 @@
 
     @include respond-to('tablet') {
         &__actions--mobile {
-            display: none !important; // Tablet par mobile buttons permanent hide
+            display: none !important;
         }
 
         &__actions--desktop {
             order: 3;
             justify-self: end;
-            display: flex; // Tablet par top bar wapas show ho jayegi
-            align-items: center;
+            @include flex-layout($align: center);
         }
         &__container {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
             width: 100%;
-            padding: 0 2.5rem;
+            padding: 0 1.7rem;
         }
         &__toggle {
             order: 1;
             justify-self: start;
-            width: 1rem;
-
+            width: 2.75rem;
+            height: 2.75rem;
+            padding: 0;
             &-icon {
                 font-size: 2.1rem;
                 color: $color-white;
@@ -149,8 +138,7 @@
         &__actions {
             order: 3;
             justify-self: end;
-            display: flex;
-            align-items: center;
+            @include flex-layout($align: center);
         }
     }
 
@@ -158,14 +146,11 @@
         padding: 4rem 5.7rem;
         &__actions--desktop {
             order: 3;
-            display: flex;
-            align-items: center;
+            @include flex-layout($align: center);
             flex-shrink: 0;
         }
         &__container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex-layout($align: center, $justify: space-between);
         }
 
         &__toggle {
@@ -186,14 +171,13 @@
 
         &__nav {
             order: 2;
-            display: flex;
             position: static;
             padding: 0;
             background: transparent;
 
             margin-left: 0;
             margin-right: 0;
-
+            @include flex-layout();
             &--open {
                 position: static;
                 box-shadow: none;
@@ -204,9 +188,7 @@
         }
 
         &__nav-list {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+            @include flex-layout($align: center);
             gap: 4rem;
             margin: 0;
             padding-right: 0.5rem;
@@ -220,7 +202,7 @@
                 Roboto,
                 sans-serif;
             font-size: 0.875rem;
-            font-weight: 700;
+            font-weight: $font-weight-bold;
             line-height: 1;
             letter-spacing: 0;
             color: $color-text-muted;
@@ -230,14 +212,13 @@
 
             &--active {
                 color: $color-text-active;
-                font-weight: 700;
+                font-weight: $font-weight-bold;
                 opacity: 1;
             }
         }
         &__actions {
             order: 3;
-            display: flex;
-            align-items: center;
+            @include flex-layout($align: center);
             flex-shrink: 0;
         }
     }

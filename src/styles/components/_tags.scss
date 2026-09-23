@@ -1,6 +1,7 @@
 @use '../abstract/variables' as *;
+@use '../abstract/colors' as *;
+@use '../abstract/mixins' as *;
 
-// Section Subtitle ("TRAVEL POINT", "TESTIMONIALS")
 .section-tag {
     color: $color-secondary;
     font-size: $font-size-sm;
@@ -11,58 +12,87 @@
     display: block;
 }
 
-// "Explore the world!" Tag
 .tag-pill {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1.25rem;
+    gap: 0.75rem;
+    padding: 0.6rem 1.5rem;
+    background-color: $color-white;
     border-radius: 6.25rem;
-    background-color: rgba($color-secondary, 0.1);
     color: $color-secondary;
     font-weight: $font-weight-bold;
     font-size: $font-size-sm;
+    line-height: 1;
+    white-space: nowrap;
+    font-family: $font-family-heading;
+    box-shadow: $shadow-tags;
+    margin-bottom: 2.5rem;
+    .icon-bag {
+        font-size: $font-size-2xl;
+        color: $color-primary;
+    }
+    @include respond-to('tablet') {
+        font-size: $font-size-xxs;
+        padding: 0.5rem $font-size-base;
+        .icon-bag {
+            font-size: $font-size-base;
+        }
+    }
+    @include respond-to('desktop') {
+        padding: 1rem 2rem;
+        font-size: $font-size-base;
+        gap: 0.85rem;
+
+        .icon-bag {
+            font-size: $font-size-2xl;
+        }
+    }
 }
 
-// Floating Badges ("Top Places", "Discounted Price")
 .badge-floating {
     position: absolute;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: $color-white;
-    padding: 0.65rem 1.25rem;
-    border-radius: 6.25rem;
+    gap: 0.1rem;
+    padding: 0.35rem 0.65rem;
+    background-color: $color-white;
+    border-radius: 3rem;
     box-shadow: $shadow-floating-card;
     font-weight: $font-weight-bold;
     font-size: $font-size-xs;
-    z-index: var(--z-index-content);
+    color: $color-text-muted;
+    white-space: nowrap;
+    z-index: $z-content;
+
+    .icon-location {
+        font-size: $font-size-sm;
+        color: $yellow;
+    }
+    @include respond-to('tablet') {
+        padding: 0.8rem 2rem;
+        font-size: $font-size-xs;
+    }
+    @include respond-to('desktop') {
+        padding: 1.1rem 2.5rem;
+        font-size: $font-size-sm;
+    }
 }
 
 // Floating Circular Icon Badges
 .floating-icon {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+    z-index: $z-content;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: $shadow-floating-card;
-    z-index: var(--z-index-content);
+    line-height: 1;
 
-    &--pink {
-        background-color: $color-secondary;
-        color: $color-white;
+    filter: drop-shadow($shadow-icon);
+
+    .icon-paper-plane,
+    .icon-user {
+        font-size: $font-size-5xl;
+        display: block;
     }
-
-    &--orange {
-        background-color: $color-accent-orange;
-        color: $color-white;
-    }
-
-    &--yellow {
-        background-color: $color-yellow-star;
-        color: $color-white;
+    .icon-user .path2:before {
+        margin-left: -1.2em !important;
     }
 }

@@ -1,35 +1,5 @@
-/**
- * Initializes the header navigation toggling and mobile menu state.
- * Handles menu toggle interaction and outside click handler for accessibility.
- *
- * @returns {void}
- */
+import { initNavigation } from './navigation.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.querySelector('.header__toggle');
-    const navMenu = document.querySelector('.header__nav');
-    const navActions = document.querySelector('.header__actions');
-
-    if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener('click', () => {
-            // Toggle open class
-            navMenu.classList.toggle('header__nav--open');
-            if (navActions) {
-                navActions.classList.toggle('header__actions--open');
-            }
-            // Accessibility (aria-expanded update)
-            const isExpanded = navMenu.classList.contains('header__nav--open');
-            toggleBtn.setAttribute('aria-expanded', isExpanded);
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (
-                !toggleBtn.contains(event.target) &&
-                !navMenu.contains(event.target)
-            ) {
-                navMenu.classList.remove('header__nav--open');
-                toggleBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
+    initNavigation();
 });
