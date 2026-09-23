@@ -6,9 +6,7 @@
     padding: 1.6rem 1rem 3rem;
     overflow: visible;
     &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-layout($direction: column, $align: center);
         gap: 0.5rem;
         text-align: center;
     }
@@ -103,9 +101,7 @@
     /* 2. Content & Typography                                                   */
     /* -------------------------------------------------------------------------- */
     &__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-layout($direction: column, $align: center);
     }
 
     &__triangles-decor {
@@ -137,8 +133,7 @@
     }
 
     &__actions {
-        display: flex;
-        flex-direction: column;
+        @include flex-layout($direction: column);
         width: 110%;
         gap: 2rem;
     }
@@ -362,9 +357,6 @@
     }
 
     &__actions {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
         gap: 1.5rem;
         width: 100%;
         margin-bottom: 0;
@@ -392,17 +384,16 @@
             box-shadow: $shadow-button-primary-hover;
 
             .hero__demo-icon-wrapper {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 1.75rem;
-                height: 1.75rem;
-                background-color: $color-primary;
+                @include flex-layout(
+                    $direction: column,
+                    $align: center,
+                    $justify: center
+                );
                 border-radius: 50%;
                 color: $white;
 
                 .icon-watch {
-                    font-size: $font-size-xs;
+                    font-size: $font-size-xl;
                 }
             }
         }
