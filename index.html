@@ -74,15 +74,19 @@
                     type="button"
                     aria-label="Toggle Navigation"
                     aria-expanded="false"
+                    aria-controls="primary-navigation"
                 >
-                    <i class="icon-hamburger header__toggle-icon"></i>
+                    <i
+                        class="icon-hamburger header__toggle-icon"
+                        aria-hidden="true"
+                    ></i>
                 </button>
 
                 <!-- Brand Logo -->
                 <a href="/" class="header__logo">
                     <img
                         src="/assets/icons/travlog-logo-header.svg"
-                        alt="Travel Logo"
+                        alt="Travlog"
                         class="header__logo-img"
                     />
                 </a>
@@ -125,10 +129,7 @@
                     </ul>
                     <!-- Auth Actions -->
                     <div class="header__actions header__actions--mobile">
-                        <a
-                            href="#login"
-                            class="btn btn--tertiary"
-                            title="Go to Login Page"
+                        <a href="#login" class="btn" title="Go to Login Page"
                             >Log In</a
                         >
                         <a
@@ -142,10 +143,7 @@
 
                 <!-- Auth Actions -->
                 <div class="header__actions header__actions--desktop">
-                    <a
-                        href="#login"
-                        class="btn btn--tertiary"
-                        title="Go to Login Page"
+                    <a href="#login" class="btn" title="Go to Login Page"
                         >Log In</a
                     >
                     <a

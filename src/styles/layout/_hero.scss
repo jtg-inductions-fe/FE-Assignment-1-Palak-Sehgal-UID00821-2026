@@ -188,7 +188,7 @@
 
         &__title {
             font-size: 2.5rem;
-            padding: 1.7rem 6rem 2rem;
+            padding: 2.2rem 6rem 2rem;
             margin-bottom: 0rem;
         }
         &__description {
@@ -353,49 +353,6 @@
         }
     }
     &__pill {
-        margin-bottom: 2.5rem;
-    }
-
-    &__actions {
-        gap: 1.5rem;
-        width: 100%;
         margin-bottom: 0;
-
-        // Get Started Button
-        .btn--primary {
-            padding: 1.25rem 2.25rem;
-            font-size: $font-size-sm;
-            font-weight: $font-weight-bold;
-            border-radius: 6.25rem;
-            box-shadow: $shadow-badge-discount;
-        }
-
-        // Watch Demo Button
-        .hero__btn-demo {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.25rem 2rem;
-            font-size: $font-size-sm;
-            font-weight: $font-weight-bold;
-            background: $white;
-            border-radius: 6.25rem;
-            color: $color-text-dark;
-            box-shadow: $shadow-button-primary-hover;
-
-            .hero__demo-icon-wrapper {
-                @include flex-layout(
-                    $direction: column,
-                    $align: center,
-                    $justify: center
-                );
-                border-radius: 50%;
-                color: $white;
-
-                .icon-watch {
-                    font-size: $font-size-xl;
-                }
-            }
-        }
     }
 }
