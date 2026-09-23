@@ -74,6 +74,10 @@
         }
     }
 
+    &__actions {
+        display: none;
+    }
+
     &__nav-list {
         @include flex-layout($direction: column, $align: center);
         gap: 1.5rem;
