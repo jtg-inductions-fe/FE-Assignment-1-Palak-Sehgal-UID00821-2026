@@ -1,6 +1,6 @@
 /**
  * Initializes the header navigation toggling and mobile menu state.
- * Handles menu toggle interaction and outside click handler for accessibility.
+ * Handles menu toggle interaction, nav link clicks, outside click, and Escape key for accessibility.
  *
  * @returns {void}
  */
@@ -20,6 +20,13 @@ export const initNavigation = () => {
             setMenuState(!isExpanded);
         });
 
+        // Close menu when clicking any link inside navMenu (Event Delegation)
+        navMenu.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                setMenuState(false);
+            }
+        });
+
         // Close menu when clicking outside
         document.addEventListener('click', (event) => {
             if (
@@ -27,6 +34,16 @@ export const initNavigation = () => {
                 !navMenu.contains(event.target)
             ) {
                 setMenuState(false);
+            }
+        });
+
+        // Close menu on Escape key press & return focus to toggle button
+        document.addEventListener('keydown', (event) => {
+            const isExpanded =
+                toggleBtn.getAttribute('aria-expanded') === 'true';
+            if (event.key === 'Escape' && isExpanded) {
+                setMenuState(false);
+                toggleBtn.focus();
             }
         });
     }
