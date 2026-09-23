@@ -62,7 +62,7 @@
             border-radius: 0 0 1rem 1rem;
             gap: 1.5rem;
             z-index: $z-nav;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
             @include flex-layout($direction: column, $align: center);
             // Nav open hone par inner actions buttons automatically flex show honge
             .header__actions {
@@ -93,7 +93,7 @@
 
     @include respond-to('tablet') {
         &__actions--mobile {
-            display: none !important; // Tablet par mobile buttons permanent hide
+            display: none !important;
         }
 
         &__actions--desktop {
