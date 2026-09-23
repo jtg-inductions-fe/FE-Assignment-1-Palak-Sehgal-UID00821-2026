@@ -54,8 +54,15 @@
     }
 
     @include respond-to('tablet') {
-        padding: 0.6rem 1.5rem;
+        padding: 0.4rem 1.5rem;
         font-size: 0.65rem;
+
+        &--outline {
+            &:hover {
+                border-color: $color-primary;
+                color: $color-primary;
+            }
+        }
     }
 
     @include respond-to('desktop') {

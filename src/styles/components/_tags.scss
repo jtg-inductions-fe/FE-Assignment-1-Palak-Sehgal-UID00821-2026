@@ -27,8 +27,24 @@
     font-family: $font-family-heading;
     box-shadow: $shadow-tags;
     .icon-bag {
-        font-size: 1.5rem;
+        font-size: $font-size-2xl;
         color: $color-primary;
+    }
+    @include respond-to('tablet') {
+        font-size: $font-size-xxs;
+        padding: 0.5rem $font-size-base;
+        .icon-bag {
+            font-size: $font-size-base;
+        }
+    }
+    @include respond-to('desktop') {
+        padding: 1rem 2rem;
+        font-size: $font-size-base;
+        gap: 0.85rem;
+
+        .icon-bag {
+            font-size: $font-size-2xl;
+        }
     }
 }
 
