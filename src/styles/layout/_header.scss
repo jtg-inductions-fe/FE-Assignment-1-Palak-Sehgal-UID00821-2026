@@ -93,7 +93,7 @@
 
     @include respond-to('tablet') {
         &__actions--mobile {
-            display: none;
+            display: none !important;
         }
 
         &__actions--desktop {
