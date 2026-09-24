@@ -3,7 +3,7 @@
 
 .sponsors {
     width: 100%;
-    margin: 3rem 0rem;
+    margin: 1rem 0rem;
     &__container {
         padding: 0;
     }
@@ -37,10 +37,12 @@
         }
     }
     @include respond-to('tablet') {
+        margin: 3rem 0rem;
         padding: 0rem 9rem;
     }
 
     @include respond-to('desktop') {
+        margin: 3rem 0rem;
         padding: 0rem 3rem;
         &__container {
             @include flex-layout($align: center, $justify: space-around);

@@ -1,0 +1,181 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.travel-point {
+    padding: 6.5rem 0rem;
+    &__container {
+        @include flex-layout($direction: column, $align: center);
+        gap: 1.5rem;
+        padding: 0rem 0rem;
+    }
+
+    /* Left Side - Image Container */
+    &__media {
+        width: calc(100% + (var(--container-padding, 1.25rem) * 2));
+        margin-inline: calc(var(--container-padding, 1.25rem) * -1);
+        @include flex-layout($justify: flex-start);
+    }
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Right Side - Content Wrapper */
+    &__content {
+        @include flex-layout($direction: column, $align: center);
+        text-align: center;
+        width: 100%;
+    }
+
+    &__subtitle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 1.5rem;
+        border-radius: 6.25rem;
+        color: $color-secondary;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-sm;
+        line-height: 1;
+        white-space: nowrap;
+        font-family: $font-family-heading;
+        margin-bottom: 1.1rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-size: 1.75rem;
+        font-weight: $font-weight-bold;
+        line-height: 1.3;
+        color: $color-text-muted;
+        margin-bottom: 1.9rem;
+        margin-top: -0.7rem;
+        &-accent {
+            color: $color-text-muted;
+        }
+    }
+
+    &__description {
+        font-size: $font-size-sm;
+        line-height: 1.6;
+        color: rgba(25, 24, 37, 0.5);
+        margin-bottom: 2rem;
+        max-width: 320px;
+    }
+
+    /* Stats Grid - Single Column Stack for Mobile */
+    &__stats {
+        @include flex-layout($direction: column);
+        gap: 1rem;
+        width: 100%;
+        padding: 0rem 1.5rem;
+    }
+
+    &__stat-card {
+        @include flex-layout(
+            $direction: column,
+            $align: center,
+            $justify: center
+        );
+        padding: 1.7rem 1.5rem;
+        background-color: $color-white;
+        border: 1px solid rgba(25, 24, 37, 0.1);
+        border-radius: 1.25rem;
+        width: 100%;
+        gap: 0.1rem;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+        &:hover {
+            box-shadow: $shadow-badge-discount;
+        }
+    }
+
+    &__stat-number {
+        font-family: $font-family-heading;
+        font-size: 2.1875rem;
+        font-weight: $font-weight-bold;
+        color: $color-accent-orange;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    &__stat-label {
+        font-family: $font-family-base;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-regular;
+        color: $color-text-muted;
+    }
+
+    &__decor-icon {
+        display: none;
+    }
+
+    @include respond-to('tablet') {
+        padding: 3.5rem 0rem;
+        &__container {
+            gap: 1rem;
+        }
+
+        /* Left-attached Large Image Layout */
+        &__media {
+            width: calc(100% + (var(--container-padding, 2rem) * 2));
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+            justify-content: flex-start;
+        }
+
+        &__img {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        &__content {
+            padding: 2.5rem 0rem;
+            max-width: 100%;
+        }
+
+        &__title {
+            margin-bottom: $font-size-2xl-lg;
+        }
+
+        &__subtitle {
+            font-size: $font-size-lg;
+            margin-bottom: 0.8rem;
+        }
+
+        &__description {
+            max-width: 660px;
+            margin-bottom: 2.5rem;
+        }
+
+        &__stats {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem;
+            padding: 0rem 1rem;
+            width: 100%;
+        }
+
+        &__stat-card {
+            width: calc(50% - 0.625rem);
+            padding: 1.5rem 1.5rem;
+            max-width: 348px;
+        }
+
+        &__stat-number {
+            font-size: $font-size-2xl-lg;
+        }
+
+        &__stat-label {
+            font-size: $font-size-sm;
+        }
+    }
+}
