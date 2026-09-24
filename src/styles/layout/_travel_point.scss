@@ -64,7 +64,7 @@
         line-height: 1.6;
         color: rgba(25, 24, 37, 0.5);
         margin-bottom: 2rem;
-        max-width: 320px;
+        max-width: 20rem;
     }
 
     /* Stats Grid - Single Column Stack for Mobile */
@@ -150,7 +150,7 @@
         }
 
         &__description {
-            max-width: 660px;
+            max-width: 41.25rem;
             margin-bottom: 2.5rem;
         }
 
@@ -167,7 +167,7 @@
         &__stat-card {
             width: calc(50% - 0.625rem);
             padding: 1.5rem 1.5rem;
-            max-width: 348px;
+            max-width: 21.75rem;
         }
 
         &__stat-number {
