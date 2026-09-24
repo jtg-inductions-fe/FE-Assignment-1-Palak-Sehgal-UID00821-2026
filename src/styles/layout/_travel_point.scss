@@ -1,6 +1,10 @@
 @use '../abstract/variables' as *;
 @use '../abstract/mixins' as *;
 
+$travel-point-media-bleed-mobile: 1.25rem;
+$travel-point-media-bleed-tablet: 2rem;
+$travel-point-media-bleed-desktop: 2.5rem;
+
 .travel-point {
     padding: 6.5rem 0rem;
     &__container {
@@ -11,8 +15,8 @@
 
     /* Left Side - Image Container */
     &__media {
-        width: calc(100% + (var(--container-padding, 1.25rem) * 2));
-        margin-inline: calc(var(--container-padding, 1.25rem) * -1);
+        width: calc(100% + ($travel-point-media-bleed-mobile * 2));
+        margin-inline: -$travel-point-media-bleed-mobile;
         @include flex-layout($justify: flex-start);
     }
 
@@ -124,7 +128,7 @@
 
         /* Left-attached Large Image Layout */
         &__media {
-            width: calc(100% + (var(--container-padding, 2rem) * 2));
+            width: calc(100% + ($travel-point-media-bleed-tablet * 2));
             margin-inline-start: 0;
             margin-inline-end: 0;
             justify-content: flex-start;
@@ -155,10 +159,8 @@
         }
 
         &__stats {
-            display: flex;
-            flex-direction: row;
+            @include flex-layout($direction: row, $justify: center);
             flex-wrap: wrap;
-            justify-content: center;
             gap: 1.25rem;
             padding: 0rem 1rem;
             width: 100%;
@@ -176,6 +178,118 @@
 
         &__stat-label {
             font-size: $font-size-sm;
+        }
+    }
+
+    @include respond-to('desktop') {
+        padding: 5.5rem 0rem;
+        &__container {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        /* Left Side Media - Larger Scaling */
+        &__media {
+            width: 70%;
+            margin-left: -$travel-point-media-bleed-desktop;
+            margin-right: 0;
+            @include flex-layout($justify: flex-start);
+        }
+
+        &__img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            transform: scale(1.04) translateY(-1.1rem);
+            transform-origin: top left;
+        }
+
+        &__content {
+            width: 46%;
+            align-items: flex-start;
+            text-align: left;
+            padding: 1rem 0rem;
+            position: relative;
+        }
+
+        &__subtitle {
+            font-size: 1.3125rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.25em;
+            padding: 0;
+            background: transparent;
+        }
+
+        &__title {
+            font-size: 2.75rem;
+            line-height: 1.25;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            max-width: 28rem;
+        }
+
+        &__description {
+            font-size: 1rem;
+            max-width: 28rem;
+            text-align: left;
+            margin-bottom: 4rem;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        &__stats {
+            @include flex-layout($direction: row, $justify: center);
+            flex-wrap: wrap;
+            row-gap: 2rem;
+            column-gap: 1.5rem;
+            padding: 0;
+            width: 100%;
+            margin-left: -3rem;
+        }
+
+        &__stat-card {
+            width: calc(50% - 1rem);
+            max-width: 13.5rem;
+            padding: 2.25rem 1.25rem;
+            border-radius: 2rem;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        &__stat-number {
+            font-size: 2.25rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        &__stat-label {
+            font-size: $font-size-lg;
+            line-height: 1.2;
+        }
+
+        &__decor-icon {
+            position: absolute;
+            bottom: -7rem;
+            right: -1.8rem;
+            height: 9.2rem;
+            z-index: $z-content;
+            display: block;
+            pointer-events: none;
+            transform: scale(2.5) translate(10%, -20%);
+        }
+
+        &__decor-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0px 15px 30px rgba(250, 205, 73, 0.35));
         }
     }
 }

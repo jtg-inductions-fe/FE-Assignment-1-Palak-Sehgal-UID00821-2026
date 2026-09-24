@@ -240,11 +240,11 @@
             align-items: flex-start;
             flex: 0 0 28rem;
             position: relative;
-            padding-top: 2.9rem;
+            padding-top: 3rem;
         }
 
         &__pill {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         &__title {
             font-size: 4.2rem;
@@ -351,8 +351,5 @@
             bottom: 28%;
             right: -12rem;
         }
-    }
-    &__pill {
-        margin-bottom: 0;
     }
 }
