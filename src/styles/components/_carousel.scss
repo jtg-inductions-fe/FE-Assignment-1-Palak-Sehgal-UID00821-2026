@@ -1,44 +1,191 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
-// Star Rating Component
-.rating-stars {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+.testimonials {
+    padding: 0.8rem 0;
+    text-align: center;
 
-    .icon-star,
-    &__icon-star {
-        font-size: 1.25rem;
-        color: $color-yellow-star;
+    &__header {
+        margin-bottom: 3.5rem;
     }
-}
 
-// Carousel Pagination Dots
-.carousel-dots {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+    &__subtitle {
+        display: block;
+        color: $color-secondary;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title {
+        font-family: $font-family-heading;
+        font-size: 1.8rem;
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+    }
+
+    /* Carousel Layout */
+    &__carousel {
+        position: relative;
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+
+    &__viewport {
+        overflow: hidden;
+    }
+
+    &__track {
+        display: flex;
+        touch-action: pan-y;
+    }
+
+    &__slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        padding: 0 1rem;
+        @include flex-layout(column, center, center);
+    }
+
+    /* Avatar */
+    &__avatar-wrapper {
+        width: 6.875rem;
+        height: 6.875rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 3.7rem;
+    }
+
+    &__avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Author Info */
+    &__info {
+        margin-bottom: 1.5rem;
+    }
+
+    &__author {
+        font-size: 1.5625rem;
+        color: $color-text-dark;
+        margin-bottom: 1rem;
+    }
+
+    &__name {
+        color: $color-accent-orange;
+        font-weight: $font-weight-bold;
+    }
+
+    &__role {
+        font-weight: $font-weight-regular;
+        font-size: 1.3rem;
+    }
+
+    &__stars {
+        color: $color-yellow-star;
+        font-size: $font-size-2xl-lg;
+        letter-spacing: 0.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Quote Text */
+    &__quote {
+        color: $color-text-muted;
+        font-size: $font-size-base;
+        line-height: 1.6;
+        max-width: 31.25rem;
+        margin: 0 auto;
+    }
+
+    /* Navigation Buttons */
+    &__btn {
+        position: absolute;
+        top: 3.3125rem;
+        transform: translateY(-50%);
+        width: 3.4375rem;
+        height: 3.4375rem;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        @include flex-layout(row, center, center);
+        transition: all 0.3s ease;
+        z-index: $z-content;
+        font-size: $font-size-2xl;
+
+        &--prev {
+            left: 0rem;
+            background-color: $color-white;
+            color: $color-text-dark;
+            box-shadow: $shadow-floating-card;
+            border: 0.125rem solid rgba($color-text-muted, 0.1);
+        }
+
+        &--next {
+            right: 0rem;
+            background-color: $color-primary;
+            color: $color-white;
+            box-shadow: $shadow-button-primary;
+        }
+    }
+
+    /* Pagination Dots */
+    &__pagination {
+        @include flex-layout(row, center, center);
+        gap: 0.75rem;
+        margin-top: 2.5rem;
+    }
 
     &__dot {
-        width: 0.75rem;
-        height: 0.75rem;
+        width: 1.25rem;
+        height: 1.25rem;
         border-radius: 50%;
         background-color: $color-dot-inactive;
         border: none;
         padding: 0;
         cursor: pointer;
-        transition:
-            width 0.3s ease,
-            border-radius 0.3s ease,
-            background-color 0.3s ease;
+        transition: background-color 0.3s ease;
 
-        // BEM modifier syntax for active state
-        &--active,
-        &.is-active {
+        &--active {
             width: 1.5rem;
-            border-radius: 6.25rem;
-            background-color: $color-dot-active;
+            height: 1.5rem;
+            background-color: $color-secondary;
         }
+    }
+
+    // ==========================================
+    // MEDIA QUERIES (TABLET & DESKTOP)
+    // ==========================================
+
+    @include respond-to('tablet') {
+        &__title {
+            font-size: $font-size-3xl;
+        }
+
+        &__avatar-wrapper {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &__btn {
+            top: 3.4375rem;
+            width: 5rem;
+            height: 5rem;
+
+            &--prev {
+                left: -2.5rem;
+            }
+
+            &--next {
+                right: -2.5rem;
+            }
+        }
+    }
+
+    @include respond-to('desktop') {
+        //TODO
     }
 }
