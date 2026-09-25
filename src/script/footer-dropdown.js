@@ -1,31 +1,55 @@
+/**
+ * Initializes the footer navigation accordion dropdown for mobile viewports.
+ * Handles click and keyboard accessibility events, as well as breakpoint resize resets.
+ *
+ * @returns {void}
+ */
 export const initDropdown = () => {
     const footerNavTitles = document.querySelectorAll('.footer__nav-title');
     const footerNavGroups = document.querySelectorAll('.footer__nav-group');
+    const TABLET_BREAKPOINT = 431;
 
-    // 1. Handle Click (Accordion functionality)
+    // Toggle function for accordion
+    const toggleAccordion = (title) => {
+        if (window.innerWidth < TABLET_BREAKPOINT) {
+            const group = title.closest('.footer__nav-group');
+            if (group) {
+                group.classList.toggle('footer__nav-group--open');
+            }
+        }
+    };
+
     footerNavTitles.forEach((title) => {
+        // Accessibility attributes for keyboard focus
+        title.setAttribute('tabindex', '0');
+        title.setAttribute('role', 'button');
+
+        // Mouse click handler
         title.addEventListener('click', () => {
-            // Only allow toggling if the window is in mobile view
-            // (assuming 768px is your tablet breakpoint)
-            if (window.innerWidth < 768) {
-                const group = title.closest('.footer__nav-group');
-                group.classList.toggle('is-open');
+            toggleAccordion(title);
+        });
+
+        // Keyboard handler (Enter & Space keys)
+        title.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault(); // Space press karne par page scroll roklega
+                toggleAccordion(title);
             }
         });
     });
 
-    // 2. Prevent mobile state from breaking tablet/desktop layouts
-    const tabletBreakpoint = window.matchMedia('(min-width: 768px)');
+    // Handle screen resize across breakpoint
+    const tabletBreakpoint = window.matchMedia(
+        `(min-width: ${TABLET_BREAKPOINT}px)`,
+    );
 
     const handleResize = (e) => {
         if (e.matches) {
-            // Screen is tablet or wider: close all mobile accordions
             footerNavGroups.forEach((group) => {
-                group.classList.remove('is-open');
+                group.classList.remove('footer__nav-group--open');
             });
         }
     };
 
-    // Listen for window resize crossing the breakpoint
     tabletBreakpoint.addEventListener('change', handleResize);
 };

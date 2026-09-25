@@ -63,6 +63,9 @@
         text-decoration: none;
         transition: transform 0.3s ease;
 
+        min-width: 44px;
+        min-height: 44px;
+
         i[class*='icon-'] {
             font-size: 2rem;
             display: inline-block;
@@ -115,7 +118,7 @@
         flex-direction: column;
 
         // JS Accordion Open State
-        &.is-open {
+        &--open {
             .footer__nav-list {
                 display: flex;
                 flex-direction: column;
