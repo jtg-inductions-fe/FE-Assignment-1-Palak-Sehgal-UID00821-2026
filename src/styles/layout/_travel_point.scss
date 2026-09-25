@@ -129,8 +129,7 @@ $travel-point-media-bleed-desktop: 2.5rem;
         /* Left-attached Large Image Layout */
         &__media {
             width: calc(100% + ($travel-point-media-bleed-tablet * 2));
-            margin-inline-start: 0;
-            margin-inline-end: 0;
+            margin-inline: -$travel-point-media-bleed-tablet;
             justify-content: flex-start;
         }
 
