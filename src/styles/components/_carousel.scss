@@ -173,7 +173,7 @@
             transform: translateX(-50%);
             width: 100vw;
             height: 120%;
-            background-image: url('/assets/icons/bg-wave-tablet.svg');
+            background-image: url('/assets/bg-images/bg-wave-tablet.svg');
             background-repeat: no-repeat;
             background-position: top center;
             background-size: 100% auto;
@@ -251,7 +251,7 @@
 
         // --- Wave Background Adjustment for Desktop ---
         &::before {
-            background-image: url('/assets/icons/bg-wave-desktop.svg');
+            background-image: url('/assets/bg-images/bg-wave-desktop.svg');
             top: -15rem;
             height: 150%;
             opacity: 1;
