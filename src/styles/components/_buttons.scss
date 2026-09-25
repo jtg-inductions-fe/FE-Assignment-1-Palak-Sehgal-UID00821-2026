@@ -41,16 +41,16 @@
     &--icon-circle {
         width: 3.5rem;
         height: 3.5rem;
-        padding: 0;
+        padding: 0 !important;
         border-radius: 50%;
         border: $border-translucent-dark;
         background: $color-white;
+    }
 
-        &--is-active {
-            background: $color-primary;
-            color: $color-white;
-            border-color: $color-primary;
-        }
+    &--is-active {
+        background: $color-primary;
+        color: $color-white;
+        border-color: $color-primary;
     }
 
     @include respond-to('tablet') {
