@@ -57,7 +57,7 @@
     border-radius: 3rem;
     box-shadow: $shadow-floating-card;
     font-weight: $font-weight-bold;
-    font-size: $font-badge-floating;
+    font-size: $font-size-xs;
     color: $color-text-muted;
     white-space: nowrap;
     z-index: $z-content;
@@ -68,6 +68,7 @@
     }
     @include respond-to('tablet') {
         padding: 0.8rem 2rem;
+        font-size: $font-size-xs;
     }
     @include respond-to('desktop') {
         padding: 1.1rem 2.5rem;
