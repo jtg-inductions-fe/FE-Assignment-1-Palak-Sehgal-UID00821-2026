@@ -4,6 +4,8 @@
 .testimonials {
     padding: 0.8rem 0;
     text-align: center;
+    position: relative;
+    z-index: $z-default;
 
     &__header {
         margin-bottom: 3.5rem;
@@ -163,10 +165,25 @@
     @include respond-to('tablet') {
         padding: 0rem 0;
 
+        &::before {
+            content: '';
+            position: absolute;
+            top: -11rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 120%;
+            background-image: url('/assets/icons/bg-wave.svg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+            opacity: 0.1;
+            z-index: $z-behind;
+            pointer-events: none;
+        }
+
         &__header {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include flex-layout(column, center, center);
             gap: 0.4rem;
             margin-bottom: 2.1rem;
         }
@@ -180,9 +197,8 @@
             font-size: $font-size-3xl;
         }
 
-        // Avatar ka size Figma ke chhote overlay ke hisaab se shrink kiya
         &__avatar-wrapper {
-            width: 6rem; // 10rem se ghata kar 6rem (96px) kar diya
+            width: 6rem;
             height: 6rem;
         }
         &__info {
