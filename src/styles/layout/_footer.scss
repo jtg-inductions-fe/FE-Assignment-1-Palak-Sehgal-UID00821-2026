@@ -1,0 +1,204 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.footer {
+    padding: 6rem 0 3rem;
+    position: relative;
+    background-color: $color-white;
+
+    &__decor {
+        display: none;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    /* --- 1. Brand Section --- */
+    &__brand {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo {
+        display: inline-flex;
+        margin-bottom: 2rem;
+
+        &-img {
+            height: 2.2rem;
+            width: auto;
+        }
+    }
+
+    &__description {
+        color: $color-text-muted;
+        font-size: $font-size-sm;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 22rem;
+    }
+
+    /* --- Social Media Icons --- */
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__social-item {
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+
+        i {
+            font-size: 2rem;
+            display: inline-block;
+            position: relative;
+            width: 1.1em; // Explicit width bounds
+            height: 1.1em; // Explicit height bounds
+            line-height: 1;
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1em;
+                height: 1em;
+
+                &::before {
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    margin: 0 !important;
+                    width: 1em !important;
+                    height: 1em !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                }
+            }
+
+            // Path 1 acts as base circle container
+            .path1 {
+                position: relative;
+                display: block;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+
+    /* --- 2. Navigation Accordion --- */
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2.1rem;
+    }
+
+    &__nav-group {
+        display: flex;
+        flex-direction: column;
+
+        // JS Accordion Open State
+        &.is-open {
+            .footer__nav-list {
+                display: flex;
+                flex-direction: column;
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .footer__nav-toggle {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__nav-title {
+        @include flex-layout(row, center, space-between);
+        font-family: $font-family-heading;
+        font-size: 1.3rem;
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+        margin: 0;
+        padding: 1rem 0;
+        cursor: pointer;
+    }
+
+    // Dropdown arrow indicator
+    &__nav-toggle {
+        @include flex-layout(row, center, center);
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid $color-text-dark;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+
+        &::after {
+            content: '';
+            width: 0.4rem;
+            height: 0.4rem;
+            border-bottom: 1.5px solid $color-text-dark;
+            border-right: 1.5px solid $color-text-dark;
+            transform: rotate(45deg);
+            margin-bottom: 2px;
+        }
+    }
+
+    // Mobile nav links default state (Closed)
+    &__nav-list {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__nav-item {
+        margin-bottom: 1.25rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__nav-link {
+        color: $color-text-muted;
+        text-decoration: none;
+        font-size: $font-size-base;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        &--text {
+            line-height: 1.6;
+            display: inline-block;
+        }
+    }
+
+    // ==========================================
+    // MEDIA QUERIES (TABLET & DESKTOP)
+    // ==========================================
+    @include respond-to('tablet') {
+        // TODO: Tablet layout adjustments
+    }
+
+    @include respond-to('desktop') {
+        // TODO: Desktop layout adjustments
+    }
+}
