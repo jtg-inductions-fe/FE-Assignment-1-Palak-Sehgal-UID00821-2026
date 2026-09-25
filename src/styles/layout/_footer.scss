@@ -1,0 +1,393 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.footer {
+    padding: 6rem 0 0rem;
+    position: relative;
+    background-color: $color-white;
+    overflow-x: hidden;
+    &__decor {
+        display: none;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    /* --- 1. Brand Section --- */
+    &__brand {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo {
+        display: inline-flex;
+        margin-bottom: 2rem;
+
+        &-img {
+            height: 2.2rem;
+            width: auto;
+        }
+    }
+
+    &__description {
+        font-family: $font-family-heading;
+        color: $color-text-muted;
+        font-size: $font-size-sm;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 22rem;
+    }
+
+    /* --- Social Media Icons --- */
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__social-item {
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+
+        min-width: 2.75rem;
+        min-height: 2.75rem;
+
+        i[class*='icon-'] {
+            font-size: 2rem;
+            display: inline-block;
+            position: relative;
+            width: 1.1em; // Explicit width bounds
+            height: 1.1em; // Explicit height bounds
+            line-height: 1;
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1em;
+                height: 1em;
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin: 0;
+                    width: 1em;
+                    height: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            // Path 1 acts as base circle container
+            .path1 {
+                position: relative;
+                display: block;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+
+    /* --- 2. Navigation Accordion --- */
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2.1rem;
+    }
+
+    &__nav-group {
+        display: flex;
+        flex-direction: column;
+
+        // JS Accordion Open State
+        &--open {
+            .footer__nav-list {
+                display: flex;
+                flex-direction: column;
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .footer__nav-toggle {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__nav-title {
+        font-family: $font-family-heading;
+        font-size: 1.3rem;
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+        margin: 0;
+    }
+
+    &__nav-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: 1rem 0;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    // Dropdown arrow indicator
+    &__nav-toggle {
+        @include flex-layout(row, center, center);
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid $color-text-dark;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+
+        &::after {
+            content: '';
+            width: 0.4rem;
+            height: 0.4rem;
+            border-bottom: 1.5px solid $color-text-dark;
+            border-right: 1.5px solid $color-text-dark;
+            transform: rotate(45deg);
+            margin-bottom: 2px;
+        }
+    }
+
+    // Mobile nav links default state (Closed)
+    &__nav-list {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__nav-item {
+        margin-bottom: 1.25rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__nav-link {
+        color: $color-text-muted;
+        text-decoration: none;
+        font-size: $font-size-base;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        &--text {
+            line-height: 1.6;
+            display: inline-block;
+        }
+    }
+
+    // ==========================================
+    // MEDIA QUERIES (TABLET VIEW - PIXEL PERFECT FIX)
+    // ==========================================
+    @include respond-to('tablet') {
+        position: relative;
+
+        &__container {
+            padding: 4.6rem 1rem;
+        }
+
+        /* --- 1. Brand Section Adjustment --- */
+        &__brand {
+            max-width: 60rem;
+        }
+
+        &__logo {
+            margin-bottom: 1.8rem;
+
+            &-img {
+                height: 1.9rem;
+            }
+        }
+
+        &__description {
+            font-size: $font-size-base;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 40rem;
+        }
+
+        &__socials {
+            gap: 1.3rem;
+        }
+
+        &__social-link {
+            i {
+                font-size: $font-size-2xl;
+            }
+        }
+
+        /* --- 2. Navigation Section Adjustment --- */
+        &__nav {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 6rem;
+        }
+
+        &__nav-group {
+            min-width: 8.5rem;
+        }
+
+        &__nav-title {
+            margin-bottom: 1.25rem;
+            font-size: $font-size-lg;
+        }
+
+        &__nav-button {
+            padding: 0;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        &__nav-toggle {
+            display: none;
+        }
+
+        &__nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        &__nav-item {
+            margin-bottom: 0;
+        }
+
+        &__nav-link {
+            font-size: 0.9375rem;
+            line-height: 1.6rem;
+        }
+
+        /* --- 3. Decorative Right Graphic --- */
+        &__decor {
+            display: block;
+
+            &--right {
+                display: block;
+                position: absolute;
+                right: -2rem;
+                bottom: 7rem;
+                height: 17rem;
+                width: auto;
+                pointer-events: none;
+                z-index: $z-base;
+            }
+
+            &--left {
+                display: none;
+            }
+        }
+    }
+
+    // ==========================================
+    // MEDIA QUERIES (DESKTOP VIEW)
+    // ==========================================
+    @include respond-to('desktop') {
+        padding: 11.7rem 4.5rem 5rem;
+
+        &__container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        /* --- 1. Brand Section Adjustment --- */
+        &__brand {
+            max-width: 50rem;
+        }
+
+        &__logo {
+            &-img {
+                height: 2.5rem;
+            }
+        }
+
+        &__description {
+            font-size: 1.4375rem;
+            line-height: 1.8;
+            margin-bottom: 3.5rem;
+            max-width: 45rem;
+        }
+
+        &__socials {
+            gap: 2rem;
+        }
+
+        &__social-link {
+            i {
+                font-size: $font-size-3xl;
+            }
+        }
+
+        /* --- 2. Navigation Section Adjustment --- */
+        &__nav {
+            gap: 7rem;
+            margin-right: -4rem;
+        }
+
+        &__nav-group {
+            min-width: max-content;
+        }
+
+        &__nav-title {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &__nav-list {
+            gap: 2.4rem;
+        }
+
+        &__nav-link {
+            font-size: $font-size-base;
+
+            &--text {
+                line-height: 1.6;
+            }
+        }
+
+        /* --- 3. Decorative Graphics --- */
+        &__decor {
+            &--right {
+                display: block;
+                position: absolute;
+                right: -3rem;
+                bottom: 5rem;
+                height: 23rem;
+                width: auto;
+                pointer-events: none;
+                z-index: $z-base;
+            }
+        }
+    }
+}
