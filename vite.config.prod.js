@@ -40,7 +40,7 @@ export default defineConfig(({ mode }) => {
                             /\.svg$/i.test(name ?? '') &&
                             name?.includes('icons')
                         ) {
-                            return 'icons/[name]-[hash][extname]';
+                            return 'logos/[name]-[hash][extname]';
                         }
                         if (/\.(png)$/.test(name ?? '')) {
                             return 'images/[name]-[hash][extname]';

@@ -221,11 +221,15 @@
             display: block;
             position: absolute;
             left: 0;
-            bottom: 0.5rem;
+            bottom: 4rem;
             width: 2.8rem;
             height: auto;
             pointer-events: none;
             z-index: $z-base;
+        }
+
+        &__pill {
+            margin-bottom: 0rem;
         }
     }
 
@@ -245,11 +249,11 @@
             flex: 1 1 24rem;
             max-width: 28rem;
             position: relative;
-            padding-top: 2.9rem;
+            padding-top: 3rem;
         }
 
         &__pill {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         &__title {
             font-size: 4.2rem;
