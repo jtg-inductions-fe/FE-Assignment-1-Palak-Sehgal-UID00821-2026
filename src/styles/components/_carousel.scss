@@ -173,7 +173,7 @@
             transform: translateX(-50%);
             width: 100vw;
             height: 120%;
-            background-image: url('/assets/icons/bg-wave.svg');
+            background-image: url('/assets/icons/bg-wave-tablet.svg');
             background-repeat: no-repeat;
             background-position: top center;
             background-size: 100% auto;
@@ -206,7 +206,7 @@
         }
         &__author {
             font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
         }
 
         &__role {
@@ -216,7 +216,8 @@
             margin: 0 auto 2.5rem;
         }
         &__stars {
-            letter-spacing: 0rem;
+            font-size: 1.4rem;
+            letter-spacing: 0.3rem;
         }
         &__quote {
             max-width: 25rem;
@@ -246,6 +247,90 @@
     }
 
     @include respond-to('desktop') {
-        //TODO
+        padding: 1rem 0;
+
+        // --- Wave Background Adjustment for Desktop ---
+        &::before {
+            background-image: url('/assets/icons/bg-wave-desktop.svg');
+            top: -15rem;
+            height: 150%;
+            opacity: 1;
+        }
+
+        &__header {
+            gap: 1rem;
+        }
+
+        &__subtitle {
+            font-size: $font-size-xl;
+            letter-spacing: 0.3em;
+        }
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        // --- Carousel & Content Scaling ---
+        &__carousel {
+            max-width: 60rem;
+        }
+
+        &__avatar-wrapper {
+            width: 8.5rem;
+            height: 8.5rem;
+            margin: 0 auto 2.8rem;
+        }
+
+        &__author {
+            font-size: 1.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        &__role {
+            font-size: $font-size-2xl;
+        }
+
+        &__stars {
+            font-size: 1.7rem;
+            letter-spacing: 0.4rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__quote {
+            max-width: 53rem;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        &__btn {
+            top: 11rem;
+            width: 6.25rem;
+            height: 6.25rem;
+            font-size: 1.5rem;
+
+            &--prev {
+                left: -7rem;
+            }
+
+            &--next {
+                right: -8rem;
+            }
+        }
+
+        // --- Pagination Dots ---
+        &__pagination {
+            margin-top: 3rem;
+            gap: 1rem;
+        }
+
+        &__dot {
+            width: 1.25rem;
+            height: 1.25rem;
+
+            &--active {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
     }
 }
