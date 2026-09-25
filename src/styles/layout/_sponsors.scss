@@ -43,7 +43,7 @@
 
     @include respond-to('desktop') {
         margin: 3rem 0rem;
-        padding: 0rem 3rem;
+        padding: 0rem clamp(1.5rem, 8vw, 9rem);
         &__container {
             @include flex-layout($align: center, $justify: space-around);
             width: 100%;
