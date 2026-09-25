@@ -658,7 +658,9 @@
                         >
                             <li class="footer__social-item">
                                 <a
-                                    href="#"
+                                    href="https://facebook.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     class="footer__social-link"
                                     aria-label="Facebook"
                                 >
@@ -673,7 +675,9 @@
                             </li>
                             <li class="footer__social-item">
                                 <a
-                                    href="#"
+                                    href="https://twitter.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     class="footer__social-link"
                                     aria-label="Twitter"
                                 >
@@ -688,7 +692,9 @@
                             </li>
                             <li class="footer__social-item">
                                 <a
-                                    href="#"
+                                    href="https://instagram.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     class="footer__social-link"
                                     aria-label="Instagram"
                                 >
@@ -709,16 +715,21 @@
                         <!-- Group 1: Company -->
                         <div class="footer__nav-group">
                             <h3 class="footer__nav-title">
-                                Company
-                                <!-- Mobile Accordion Chevron -->
-                                <span
-                                    class="footer__nav-toggle"
-                                    aria-hidden="true"
-                                ></span>
+                                <button
+                                    type="button"
+                                    class="footer__nav-button"
+                                    aria-expanded="false"
+                                >
+                                    Company
+                                    <span
+                                        class="footer__nav-toggle"
+                                        aria-hidden="true"
+                                    ></span>
+                                </button>
                             </h3>
                             <ul class="footer__nav-list">
                                 <li class="footer__nav-item">
-                                    <a href="#" class="footer__nav-link"
+                                    <a href="#home" class="footer__nav-link"
                                         >About</a
                                     >
                                 </li>
@@ -738,15 +749,25 @@
                         <!-- Group 2: Contact -->
                         <div class="footer__nav-group">
                             <h3 class="footer__nav-title">
-                                Contact Us
-                                <span
-                                    class="footer__nav-toggle"
-                                    aria-hidden="true"
-                                ></span>
+                                <h3 class="footer__nav-title">
+                                    <button
+                                        type="button"
+                                        class="footer__nav-button"
+                                        aria-expanded="false"
+                                    >
+                                        Contact Us
+                                        <span
+                                            class="footer__nav-toggle"
+                                            aria-hidden="true"
+                                        ></span>
+                                    </button>
+                                </h3>
                             </h3>
                             <ul class="footer__nav-list">
                                 <li class="footer__nav-item">
-                                    <a href="#" class="footer__nav-link"
+                                    <a
+                                        href="#travel-point"
+                                        class="footer__nav-link"
                                         >Why Travlog?</a
                                     >
                                 </li>
@@ -761,7 +782,9 @@
                                     >
                                 </li>
                                 <li class="footer__nav-item">
-                                    <a href="#" class="footer__nav-link"
+                                    <a
+                                        href="#testimonials"
+                                        class="footer__nav-link"
                                         >Blog</a
                                     >
                                 </li>
@@ -771,11 +794,17 @@
                         <!-- Group 3: Meet Us -->
                         <div class="footer__nav-group">
                             <h3 class="footer__nav-title">
-                                Meet Us
-                                <span
-                                    class="footer__nav-toggle"
-                                    aria-hidden="true"
-                                ></span>
+                                <button
+                                    type="button"
+                                    class="footer__nav-button"
+                                    aria-expanded="false"
+                                >
+                                    Meet Us
+                                    <span
+                                        class="footer__nav-toggle"
+                                        aria-hidden="true"
+                                    ></span>
+                                </button>
                             </h3>
                             <ul class="footer__nav-list">
                                 <li class="footer__nav-item">
@@ -806,7 +835,7 @@
                 <!-- Right Side Decorative Graphic (Seen in Desktop/Tablet View) -->
                 <img
                     src="/assets/icons/bg-orange-waves.svg"
-                    alt=""
+                    alt="Decorative orange waves graphic"
                     aria-hidden="true"
                     class="footer__decor footer__decor--right"
                     loading="lazy"

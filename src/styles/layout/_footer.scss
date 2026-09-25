@@ -133,14 +133,25 @@
     }
 
     &__nav-title {
-        @include flex-layout(row, center, space-between);
         font-family: $font-family-heading;
         font-size: 1.3rem;
         font-weight: $font-weight-bold;
         color: $color-text-dark;
         margin: 0;
+    }
+
+    &__nav-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: transparent;
+        border: none;
         padding: 1rem 0;
+        font: inherit;
+        color: inherit;
         cursor: pointer;
+        text-align: left;
     }
 
     // Dropdown arrow indicator
@@ -247,10 +258,14 @@
         }
 
         &__nav-title {
-            padding: 0;
             margin-bottom: 1.25rem;
-            cursor: default;
             font-size: $font-size-lg;
+        }
+
+        &__nav-button {
+            padding: 0;
+            cursor: default;
+            pointer-events: none;
         }
 
         &__nav-toggle {
