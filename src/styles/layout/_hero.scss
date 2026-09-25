@@ -41,21 +41,21 @@
         position: relative;
         z-index: $z-base;
 
-        &--1 {
+        &__sea {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
             width: 8.0625rem;
             height: 9rem;
         }
 
-        &--2 {
+        &__mountain {
             grid-column: 1 / 2;
             grid-row: 2 / 3;
             width: 7.9rem;
             height: 8.85rem;
         }
 
-        &--3 {
+        &__traveller {
             grid-column: 2 / 3;
             grid-row: 1 / 3;
             width: 8rem;
@@ -146,15 +146,15 @@
             width: 120%;
         }
         &__card {
-            &--1 {
+            &__sea {
                 width: 12.5rem;
                 height: 14rem;
             }
-            &--2 {
+            &__mountain {
                 width: 12.5rem;
                 height: 14rem;
             }
-            &--3 {
+            &__traveller {
                 width: 12.5rem;
                 height: 19rem;
             }
@@ -313,21 +313,21 @@
         &__card {
             border-radius: 2rem;
 
-            &--1 {
+            &__sea {
                 grid-column: 1 / 2;
                 grid-row: 1 / 2;
                 width: 17rem;
                 height: 18.5rem;
             }
 
-            &--2 {
+            &__mountain {
                 grid-column: 1 / 2;
                 grid-row: 2 / 3;
                 width: 17rem;
                 height: 18.5rem;
             }
 
-            &--3 {
+            &__traveller {
                 grid-column: 2 / 3;
                 grid-row: 1 / 3;
                 width: 17rem;
