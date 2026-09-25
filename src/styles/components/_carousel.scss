@@ -161,27 +161,71 @@
     // ==========================================
 
     @include respond-to('tablet') {
+        padding: 0rem 0;
+
+        &__header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-bottom: 2.1rem;
+        }
+
+        &__subtitle {
+            letter-spacing: 0.4em;
+            margin-bottom: 0;
+        }
+
         &__title {
             font-size: $font-size-3xl;
         }
 
+        // Avatar ka size Figma ke chhote overlay ke hisaab se shrink kiya
         &__avatar-wrapper {
-            width: 10rem;
-            height: 10rem;
+            width: 6rem; // 10rem se ghata kar 6rem (96px) kar diya
+            height: 6rem;
+        }
+        &__info {
+            margin-bottom: 0.5rem;
+        }
+        &__author {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
 
+        &__role {
+            font-size: 1.1rem;
+        }
+        &__avatar-wrapper {
+            margin: 0 auto 2.5rem;
+        }
+        &__stars {
+            letter-spacing: 0rem;
+        }
+        &__quote {
+            max-width: 25rem;
+        }
         &__btn {
-            top: 3.4375rem;
-            width: 5rem;
-            height: 5rem;
+            top: 9rem;
+            width: 4.8rem;
+            height: 4.8rem;
 
             &--prev {
-                left: -2.5rem;
+                left: 1rem;
             }
 
             &--next {
-                right: -2.5rem;
+                right: 1rem;
             }
+        }
+        &__dot {
+            &--active {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+        &__pagination {
+            margin-top: 2.8rem;
         }
     }
 

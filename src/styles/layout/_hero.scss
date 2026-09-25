@@ -222,6 +222,10 @@
             pointer-events: none;
             z-index: $z-base;
         }
+
+        &__pill {
+            margin-bottom: 0rem;
+        }
     }
 
     @include respond-to('desktop') {

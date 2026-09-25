@@ -121,7 +121,7 @@ $travel-point-media-bleed-desktop: 2.5rem;
     }
 
     @include respond-to('tablet') {
-        padding: 3.5rem 0rem;
+        padding: 3.5rem 0rem 0rem;
         &__container {
             gap: 1rem;
         }
@@ -140,7 +140,7 @@ $travel-point-media-bleed-desktop: 2.5rem;
         }
 
         &__content {
-            padding: 2.5rem 0rem;
+            padding: 2.5rem 0rem 1.1rem;
             max-width: 100%;
         }
 
