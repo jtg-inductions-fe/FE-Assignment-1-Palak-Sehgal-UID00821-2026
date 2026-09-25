@@ -4,20 +4,12 @@
 .sponsors {
     width: 100%;
     margin: 1rem 0rem;
+
     &__container {
+        @include flex-layout($align: center, $justify: space-between);
+        flex-wrap: wrap;
+        gap: 1.5rem;
         padding: 0;
-    }
-
-    &__row {
-        &--top {
-            @include flex-layout($align: center, $justify: space-between);
-            margin-bottom: 1.5rem;
-        }
-
-        &--bottom {
-            @include flex-layout($align: center, $justify: center);
-            gap: 1.5rem;
-        }
     }
 
     &__item {
@@ -35,26 +27,45 @@
         &--xs {
             flex: 0 0 16%;
         }
+
+        &:nth-child(4) {
+            margin-left: auto;
+        }
+        &:nth-child(5) {
+            margin-right: auto;
+        }
     }
+
     @include respond-to('tablet') {
         margin: 3rem 0rem;
-        padding: 0rem 9rem;
+        padding: 0rem clamp(1.5rem, 18vw, 9rem);
     }
 
     @include respond-to('desktop') {
         margin: 3rem 0rem;
-        padding: 0rem clamp(1.5rem, 8vw, 9rem);
+        padding: 0rem 3rem;
+
         &__container {
-            @include flex-layout($align: center, $justify: space-around);
+            @include flex-layout($align: center, $justify: space-between);
+            flex-wrap: nowrap;
+            gap: 2.5rem;
             width: 100%;
         }
 
-        &__row {
-            display: contents;
-        }
-
         &__item {
-            flex: 0 1 auto;
+            &--lg,
+            &--md,
+            &--sm,
+            &--xs {
+                flex: 0 1 auto;
+            }
+
+            &:nth-child(4) {
+                margin-left: 0;
+            }
+            &:nth-child(5) {
+                margin-right: 0;
+            }
         }
     }
 }
