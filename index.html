@@ -103,20 +103,14 @@
                             >
                         </li>
                         <li class="header__nav-item">
-                            <a
-                                href="#discover"
-                                class="header__nav-link"
-                                title="Go to Discover Page"
-                                >Discover</a
-                            >
+                            <button type="button" class="header__nav-link">
+                                Discover
+                            </button>
                         </li>
                         <li class="header__nav-item">
-                            <a
-                                href="#deals"
-                                class="header__nav-link"
-                                title="Go to Special Deals Page"
-                                >Special Deals</a
-                            >
+                            <button type="button" class="header__nav-link">
+                                Special Deals
+                            </button>
                         </li>
                         <li class="header__nav-item">
                             <a
@@ -129,29 +123,19 @@
                     </ul>
                     <!-- Auth Actions -->
                     <div class="header__actions header__actions--mobile">
-                        <a href="#login" class="btn" title="Go to Login Page"
-                            >Log In</a
-                        >
-                        <a
-                            href="#signup"
-                            class="btn btn--primary"
-                            title="Go to Signup Page"
-                            >Sign Up</a
-                        >
+                        <button type="button" class="btn">Log In</button>
+                        <button type="button" class="btn btn--primary">
+                            Sign Up
+                        </button>
                     </div>
                 </nav>
 
                 <!-- Auth Actions -->
                 <div class="header__actions header__actions--desktop">
-                    <a href="#login" class="btn" title="Go to Login Page"
-                        >Log In</a
-                    >
-                    <a
-                        href="#signup"
-                        class="btn btn--primary"
-                        title="Go to Signup Page"
-                        >Sign Up</a
-                    >
+                    <button type="button" class="btn">Log In</button>
+                    <button type="button" class="btn btn--primary">
+                        Sign Up
+                    </button>
                 </div>
             </div>
         </header>
@@ -162,8 +146,8 @@
                     <div class="hero__content">
                         <!-- Decorative Triangles Icon -->
                         <img
-                            src="/assets/icons/triangle-grid.svg"
-                            alt="Decorative triangle pattern grid"
+                            src="/assets/bg-images/triangle-grid.svg"
+                            alt=""
                             aria-hidden="true"
                             class="hero__triangles-decor"
                         />
@@ -186,13 +170,14 @@
                         </p>
 
                         <div class="hero__actions">
-                            <a
-                                href="#get-started"
+                            <button
+                                type="button"
                                 class="btn btn--primary hero__btn"
-                                >Get Started</a
                             >
-                            <a
-                                href="#watch-demo"
+                                Get Started
+                            </button>
+                            <button
+                                type="button"
                                 class="btn btn--outline hero__btn-demo"
                             >
                                 <span class="hero__demo-icon-wrapper">
@@ -202,15 +187,15 @@
                                     ></i>
                                 </span>
                                 <span>Watch Demo</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
                     <!-- Graphic / Image Gallery Grid -->
                     <div class="hero__gallery">
                         <img
-                            src="/assets/icons/bg-globe-map.svg"
-                            alt="Globe background illustration"
+                            src="/assets/bg-images/bg-globe-map.svg"
+                            alt=""
                             aria-hidden="true"
                             class="hero__globe-bg"
                         />
@@ -390,8 +375,9 @@
                                 <!-- Floating Ticket Decor Icon moved inside 2nd card -->
                                 <div class="travel-point__decor-icon">
                                     <img
-                                        src="assets/logos/ticket.svg"
-                                        alt="Ticket Decor Icon"
+                                        src="/assets/logos/ticket.svg"
+                                        alt=""
+                                        aria-hidden="true"
                                         class="travel-point__decor-img"
                                     />
                                 </div>
@@ -622,7 +608,7 @@
                 </div>
             </section>
             <!-- Footer Section -->
-            <footer class="footer">
+            <footer class="footer" id="contact">
                 <div class="footer__container container">
                     <!-- 1. Brand & Description -->
                     <div class="footer__brand">
@@ -712,6 +698,7 @@
                                     type="button"
                                     class="footer__nav-button"
                                     aria-expanded="false"
+                                    aria-controls="footer-company-links"
                                 >
                                     Company
                                     <span
@@ -720,7 +707,10 @@
                                     ></span>
                                 </button>
                             </h3>
-                            <ul class="footer__nav-list">
+                            <ul
+                                class="footer__nav-list"
+                                id="footer-company-links"
+                            >
                                 <li class="footer__nav-item">
                                     <a href="#home" class="footer__nav-link"
                                         >About</a
@@ -748,6 +738,7 @@
                                     type="button"
                                     class="footer__nav-button"
                                     aria-expanded="false"
+                                    aria-controls="footer-contact-links"
                                 >
                                     Contact Us
                                     <span
@@ -756,7 +747,10 @@
                                     ></span>
                                 </button>
                             </h3>
-                            <ul class="footer__nav-list">
+                            <ul
+                                class="footer__nav-list"
+                                id="footer-contact-links"
+                            >
                                 <li class="footer__nav-item">
                                     <a
                                         href="#travel-point"
@@ -795,6 +789,7 @@
                                     type="button"
                                     class="footer__nav-button"
                                     aria-expanded="false"
+                                    aria-controls="footer-meet-links"
                                 >
                                     Meet Us
                                     <span
@@ -803,7 +798,7 @@
                                     ></span>
                                 </button>
                             </h3>
-                            <ul class="footer__nav-list">
+                            <ul class="footer__nav-list" id="footer-meet-links">
                                 <li class="footer__nav-item">
                                     <a
                                         href="tel:+0092123456789"
@@ -832,7 +827,8 @@
                 <!-- Right Side Decorative Graphic (Seen in Desktop/Tablet View) -->
                 <img
                     src="/assets/bg-images/bg-orange-waves.svg"
-                    alt="Decorative orange waves graphic"
+                    alt=""
+                    aria-hidden="true"
                     class="footer__decor footer__decor--right"
                     loading="lazy"
                 />
