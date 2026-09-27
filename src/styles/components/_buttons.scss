@@ -38,10 +38,10 @@
         }
     }
 
-    &--icon-circle {
+    &.btn--icon-circle {
         width: 3.5rem;
         height: 3.5rem;
-        padding: 0 !important;
+        padding: 0;
         border-radius: 50%;
         border: $border-translucent-dark;
         background: $color-white;
@@ -54,8 +54,8 @@
     }
 
     @include respond-to('tablet') {
-        padding: 0.5rem 1.25rem; // Pehle: 0.4rem 1.5rem
-        font-size: 0.75rem; // Pehle: 0.65rem
+        padding: 0.5rem 1.25rem;
+        font-size: $font-size-xs;
         gap: 0.5rem;
     }
 

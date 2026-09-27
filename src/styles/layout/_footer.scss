@@ -65,43 +65,30 @@
         min-width: 2.75rem;
         min-height: 2.75rem;
 
-        i[class*='icon-'] {
-            font-size: 2rem;
-            display: inline-block;
-            position: relative;
-            width: 1.1em; // Explicit width bounds
-            height: 1.1em; // Explicit height bounds
-            line-height: 1;
-
-            span {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 1em;
-                height: 1em;
-
-                &::before {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    margin: 0;
-                    width: 1em;
-                    height: 1em;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-            // Path 1 acts as base circle container
-            .path1 {
-                position: relative;
-                display: block;
-            }
-        }
-
         &:hover {
             transform: translateY(-3px);
+        }
+    }
+
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        fill: currentColor;
+        transition: all 0.3s ease;
+
+        &--md {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &--lg {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        &--primary {
+            color: $color-primary;
         }
     }
 
@@ -240,12 +227,6 @@
             gap: 1.3rem;
         }
 
-        &__social-link {
-            i {
-                font-size: $font-size-2xl;
-            }
-        }
-
         /* --- 2. Navigation Section Adjustment --- */
         &__nav {
             flex-direction: row;
@@ -297,7 +278,7 @@
                 right: calc(50% - 50vw);
                 bottom: 12rem;
                 height: 17rem;
-                width: auto;
+                width: 17rem;
                 pointer-events: none;
                 z-index: $z-base;
             }
@@ -343,12 +324,6 @@
             gap: 2rem;
         }
 
-        &__social-link {
-            i {
-                font-size: $font-size-3xl;
-            }
-        }
-
         /* --- 2. Navigation Section Adjustment --- */
         &__nav {
             gap: 7rem;
@@ -384,7 +359,7 @@
                 right: calc(50% - 50vw);
                 bottom: 6rem;
                 height: 23rem;
-                width: auto;
+                width: 23rem;
                 pointer-events: none;
                 z-index: $z-base;
             }
