@@ -211,9 +211,10 @@
     // ==========================================
     @include respond-to('tablet') {
         position: relative;
-
+        padding: 5.5rem 0rem;
         &__container {
             padding: 4.6rem 1rem;
+            gap: 1.8rem;
         }
 
         /* --- 1. Brand Section Adjustment --- */
@@ -295,7 +296,7 @@
                 display: block;
                 position: absolute;
                 right: -2rem;
-                bottom: 7rem;
+                bottom: 12rem;
                 height: 17rem;
                 width: auto;
                 pointer-events: none;
@@ -312,13 +313,13 @@
     // MEDIA QUERIES (DESKTOP VIEW)
     // ==========================================
     @include respond-to('desktop') {
-        padding: 11.7rem 4.5rem 5rem;
-
+        padding: 5rem 0rem;
         &__container {
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
             gap: 2rem;
+            padding: 5.2rem 2rem;
         }
 
         /* --- 1. Brand Section Adjustment --- */

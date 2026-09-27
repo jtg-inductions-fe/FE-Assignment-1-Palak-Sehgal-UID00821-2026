@@ -3,7 +3,7 @@
 
 $travel-point-media-bleed-mobile: 1.25rem;
 $travel-point-media-bleed-tablet: 2rem;
-$travel-point-media-bleed-desktop: 2.5rem;
+$travel-point-media-bleed-desktop: 1rem;
 
 .travel-point {
     padding: 6.5rem 0rem;
@@ -191,7 +191,7 @@ $travel-point-media-bleed-desktop: 2.5rem;
 
         /* Left Side Media - Larger Scaling */
         &__media {
-            width: 70%;
+            width: calc(100% + ($travel-point-media-bleed-desktop * 2));
             margin-left: -$travel-point-media-bleed-desktop;
             margin-right: 0;
             @include flex-layout($justify: flex-start);
