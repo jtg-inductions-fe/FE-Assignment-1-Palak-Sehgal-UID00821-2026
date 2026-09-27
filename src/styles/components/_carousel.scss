@@ -2,7 +2,6 @@
 @use '../abstract/mixins' as *;
 
 .testimonials {
-    padding: 0.8rem 0;
     text-align: center;
     position: relative;
     z-index: $z-default;
@@ -248,7 +247,7 @@
     }
 
     @include respond-to('desktop') {
-        padding: 1rem 0;
+        padding: 1rem 0rem 7rem;
 
         // --- Wave Background Adjustment for Desktop ---
         &::before {
