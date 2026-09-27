@@ -73,13 +73,9 @@
     .floating-icon {
         position: absolute;
         z-index: $z-floating-icon;
-
-        .icon-paper-plane,
-        .icon-user {
-            font-size: 2.5rem;
-            display: block;
-            line-height: 1;
-        }
+        font-size: 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     &__badge-send {
         top: 7.5rem;
@@ -165,10 +161,9 @@
             row-gap: 1.6rem;
         }
         .floating-icon {
-            .icon-paper-plane,
-            .icon-user {
-                font-size: 4rem;
-            }
+            font-size: 4rem;
+            width: 4rem;
+            height: 4rem;
         }
 
         &__badge-send {
@@ -339,10 +334,9 @@
             }
         }
         .floating-icon {
-            .icon-paper-plane,
-            .icon-user {
-                font-size: 5rem;
-            }
+            font-size: 5rem;
+            width: 5rem;
+            height: 5rem;
         }
         &__badge-send {
             top: 16.5rem;

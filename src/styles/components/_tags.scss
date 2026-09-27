@@ -81,15 +81,23 @@
     position: absolute;
     z-index: $z-content;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     line-height: 1;
 
     filter: drop-shadow($shadow-icon);
 
-    .icon-paper-plane,
-    .icon-user {
-        font-size: $font-size-5xl;
+    width: $font-size-5xl;
+    height: $font-size-5xl;
+    font-size: $font-size-5xl;
+
+    [class^='icon-'],
+    [class*=' icon-'] {
         display: block;
+        font-size: inherit;
     }
+
+    // Quick fix for user icon path offset if needed, or remove if we trust the font
     .icon-user .path2:before {
         margin-left: -1.2em !important;
     }
