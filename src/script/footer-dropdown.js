@@ -42,4 +42,9 @@ export const initDropdown = () => {
     };
 
     tabletBreakpoint.addEventListener('change', handleResize);
+
+    // Call the reset routine immediately based on the initial state
+    if (tabletBreakpoint.matches) {
+        handleResize(tabletBreakpoint);
+    }
 };
