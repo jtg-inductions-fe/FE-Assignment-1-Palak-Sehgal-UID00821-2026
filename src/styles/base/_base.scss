@@ -23,11 +23,19 @@ body {
 /* 3. Global Interactive Elements & Accessibility */
 a {
     display: inline-block;
+    text-decoration: none;
+    color: inherit;
+
+    &:focus-visible {
+        outline: 0.125rem solid $color-primary;
+        outline-offset: 0.1875rem;
+    }
 }
 
-a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
     outline: 0.125rem solid $color-primary;
     outline-offset: 0.1875rem;
 }
