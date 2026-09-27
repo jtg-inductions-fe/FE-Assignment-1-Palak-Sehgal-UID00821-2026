@@ -1,9 +1,27 @@
 @use '../abstract/colors' as *;
 @use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
 
 .sponsors {
+    position: relative;
     width: 100%;
     margin: 1rem 0rem;
+
+    @include respond-to('tablet') {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: calc(50% - 50vw);
+            transform: translateY(-50%);
+            width: 21.875rem;
+            height: 31.25rem;
+            background: $grad-mesh-yellow-right-center;
+            filter: blur(2.5rem);
+            pointer-events: none;
+            z-index: $z-behind;
+        }
+    }
 
     &__container {
         @include flex-layout(
