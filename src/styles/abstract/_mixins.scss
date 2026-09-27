@@ -4,7 +4,7 @@
 // Custom Dynamic Min-Width Mixin
 @mixin respond-to($breakpoint) {
     @if map.has-key($breakpoints, $breakpoint) {
-        @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+        @media screen and (min-width: map.get($breakpoints,$breakpoint)) {
             @content;
         }
     } @else {
@@ -12,9 +12,18 @@
     }
 }
 
-@mixin flex-layout($direction: row, $align: stretch, $justify: flex-start) {
+@mixin flex-layout(
+    $direction: row,
+    $align: stretch,
+    $justify: flex-start,
+    $gap: null
+) {
     display: flex;
     flex-direction: $direction;
     align-items: $align;
     justify-content: $justify;
+
+    @if $gap {
+        gap: $gap;
+    }
 }

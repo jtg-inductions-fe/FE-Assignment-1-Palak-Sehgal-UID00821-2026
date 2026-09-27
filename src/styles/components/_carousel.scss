@@ -135,8 +135,7 @@
 
     /* Pagination Dots */
     &__pagination {
-        @include flex-layout(row, center, center);
-        gap: 0.75rem;
+        @include flex-layout(row, center, center, 0.75rem);
         margin-top: 2.5rem;
     }
 
@@ -182,8 +181,7 @@
         }
 
         &__header {
-            @include flex-layout(column, center, center);
-            gap: 0.4rem;
+            @include flex-layout(column, center, center, 0.4rem);
             margin-bottom: 2.1rem;
         }
 

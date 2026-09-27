@@ -11,24 +11,8 @@ export const initNavigation = () => {
     if (toggleBtn && navMenu) {
         const setMenuState = (isOpen) => {
             navMenu.classList.toggle('header__nav--open', isOpen);
-            toggleBtn.setAttribute('aria-expanded', isOpen);
+            toggleBtn.setAttribute('aria-expanded', String(isOpen));
         };
-
-        navMenu.addEventListener('click', (event) => {
-            if (event.target.closest('a')) {
-                setMenuState(false);
-            }
-        });
-
-        // 2. Escape key navigation
-        document.addEventListener('keydown', (event) => {
-            const isExpanded =
-                toggleBtn.getAttribute('aria-expanded') === 'true';
-            if (event.key === 'Escape' && isExpanded) {
-                setMenuState(false);
-                toggleBtn.focus();
-            }
-        });
 
         toggleBtn.addEventListener('click', () => {
             const isExpanded =

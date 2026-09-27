@@ -6,8 +6,7 @@
     padding: 1.6rem 1rem 3rem;
     overflow: visible;
     &__container {
-        @include flex-layout($direction: column, $align: center);
-        gap: 0.5rem;
+        @include flex-layout($direction: column, $align: center, $gap: 0.5rem);
         text-align: center;
     }
 
@@ -133,9 +132,8 @@
     }
 
     &__actions {
-        @include flex-layout($direction: column);
+        @include flex-layout($direction: column, $gap: 1.5rem);
         width: 110%;
-        gap: 1.5rem;
     }
 
     @include respond-to('tablet') {
