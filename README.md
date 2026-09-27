@@ -115,3 +115,17 @@ To set up the project on your local environment, follow these steps:
     ```
 
     This command will preview the built application locally (after running npm run build) run this.
+
+## Updating IcoMoon Icons
+
+To maintain consistency and ensure the icon fonts, CSS, and selection data stay in sync, follow these steps when adding or modifying icons:
+
+1. Go to the [IcoMoon App](https://icomoon.io/app/).
+2. Click on **Import Icons** and upload the existing `src/styles/vendors/selection.json` file to load the current icon set.
+3. Add or remove the icons as needed.
+4. Click **Generate Font** at the bottom right of the screen.
+5. Download the generated `.zip` file and extract it.
+6. Replace the following files in the project to keep everything synchronized:
+    - Replace the font files (`.ttf`, `.woff`, etc.) in your `public/assets/fonts/` directory.
+    - Replace the `icomoon.css` file in the `src/styles/vendors/` directory.
+    - Replace the `selection.json` file in the `src/styles/vendors/` directory with the new one from the downloaded zip.
