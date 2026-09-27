@@ -66,39 +66,15 @@
         width: 2.2rem;
         height: 2.2rem;
 
+        // Reusable icon style — works with any icomoon icon (single or multi-path).
+        // Multi-path alignment (margin-left: -1em on .path2+) is handled by
+        // the icomoon vendor stylesheet; no path-specific overrides needed here.
         i[class*='icon-'] {
             font-size: inherit;
-            display: inline-block;
-            position: relative;
-            width: 100%;
-            height: 100%;
             line-height: 1;
-
-            span {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 1em;
-                height: 1em;
-
-                &::before {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    margin: 0;
-                    width: 1em;
-                    height: 1em;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-            // Path 1 acts as base circle container
-            .path1 {
-                position: relative;
-                display: block;
-            }
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &:hover {
@@ -117,8 +93,9 @@
         display: flex;
         flex-direction: column;
 
-        // JS Accordion Open State
-        &--open {
+        // Accordion open state — driven by aria-expanded on the button,
+        // keeping CSS visual state synchronized with ARIA semantics.
+        &:has(.footer__nav-button[aria-expanded='true']) {
             .footer__nav-list {
                 display: flex;
                 flex-direction: column;

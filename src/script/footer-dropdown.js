@@ -2,24 +2,22 @@
  * Initializes the footer navigation accordion dropdown for mobile viewports.
  * Handles click and keyboard accessibility events, as well as breakpoint resize resets.
  *
+ * CSS open state is driven solely by [aria-expanded="true"] via the :has() selector —
+ * no separate modifier class is needed, keeping ARIA and visual state synchronized.
+ *
  * @returns {void}
  */
 export const initDropdown = () => {
     const footerNavButtons = document.querySelectorAll('.footer__nav-button');
-    const footerNavGroups = document.querySelectorAll('.footer__nav-group');
     const TABLET_BREAKPOINT = 431;
 
-    // Handle Click and Keyboard Access via native button
+    // Handle Click and Keyboard Access via native button.
+    // aria-expanded is the single source of truth — CSS reacts to it directly.
     footerNavButtons.forEach((button) => {
         button.addEventListener('click', () => {
             if (window.innerWidth < TABLET_BREAKPOINT) {
-                const group = button.closest('.footer__nav-group');
-                if (group) {
-                    const isOpen = group.classList.toggle(
-                        'footer__nav-group--open',
-                    );
-                    button.setAttribute('aria-expanded', isOpen);
-                }
+                const isOpen = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', String(!isOpen));
             }
         });
     });
@@ -31,12 +29,8 @@ export const initDropdown = () => {
 
     const handleResize = (e) => {
         if (e.matches) {
-            footerNavGroups.forEach((group) => {
-                group.classList.remove('footer__nav-group--open');
-                const button = group.querySelector('.footer__nav-button');
-                if (button) {
-                    button.setAttribute('aria-expanded', 'false');
-                }
+            footerNavButtons.forEach((button) => {
+                button.setAttribute('aria-expanded', 'false');
             });
         }
     };
