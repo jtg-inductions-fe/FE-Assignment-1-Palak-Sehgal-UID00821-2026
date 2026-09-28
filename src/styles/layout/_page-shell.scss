@@ -38,6 +38,10 @@
             top: -5rem;
             left: -4rem;
             filter: blur(14rem);
+
+            @media (min-width: $breakpoint-ultra-wide) {
+                left: calc(50% - 50rem);
+            }
         }
     }
 }

@@ -197,13 +197,16 @@ $travel-point-media-bleed-desktop: 1rem;
             margin-left: calc(50% - 50vw);
             width: calc(50vw - 50% + 60%);
             flex-shrink: 0;
-
+            @media (min-width: $breakpoint-ultra-wide) {
+                margin-left: 0;
+                width: 50%;
+            }
             @include flex-layout($justify: flex-end);
         }
 
         &__img {
             width: 100%;
-            max-width: none;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
             display: block;

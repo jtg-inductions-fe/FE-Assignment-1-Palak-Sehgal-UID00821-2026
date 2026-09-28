@@ -371,6 +371,10 @@
                 width: auto;
                 pointer-events: none;
                 z-index: $z-base;
+
+                @media (min-width: $breakpoint-ultra-wide) {
+                    right: 0;
+                }
             }
         }
     }

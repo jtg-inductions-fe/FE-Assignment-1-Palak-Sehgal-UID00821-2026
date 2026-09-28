@@ -265,6 +265,10 @@
             top: -15rem;
             height: 150%;
             opacity: 1;
+
+            @media (min-width: $breakpoint-ultra-wide) {
+                max-width: $breakpoint-ultra-wide;
+            }
         }
 
         &__header {

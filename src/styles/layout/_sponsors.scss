@@ -20,6 +20,10 @@
             filter: blur(2.5rem);
             pointer-events: none;
             z-index: $z-behind;
+
+            @media (min-width: $breakpoint-ultra-wide) {
+                right: calc(50% - 50rem);
+            }
         }
     }
 
