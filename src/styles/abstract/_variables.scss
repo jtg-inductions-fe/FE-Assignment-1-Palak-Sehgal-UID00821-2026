@@ -95,9 +95,10 @@ $shadow-tags: 0 0.75rem 5rem rgba(0, 0, 0, 0.08);
 // ==========================================
 // Z-index variables
 // ==========================================
-$z-behind: -1;
-$z-default: 0;
-$z-base: 1;
-$z-content: 2;
-$z-floating-icon: 3;
-$z-nav: 100;
+
+$z-behind: 0;
+$z-default: 50;
+$z-base: 100;
+$z-content: 120;
+$z-floating-icon: 130;
+$z-nav: 200;
