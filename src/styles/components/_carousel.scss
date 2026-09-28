@@ -1,43 +1,367 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
-// Star Rating Component
-.rating-stars {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+.testimonials {
+    text-align: center;
+    position: relative;
+    z-index: $z-default;
 
-    .icon-star,
-    &__icon-star {
-        font-size: 1.25rem;
-        color: $color-yellow-star;
+    &__header {
+        margin-bottom: 3.5rem;
     }
-}
 
-// Carousel Pagination Dots
-.carousel-dots {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+    &__subtitle {
+        display: block;
+        color: $color-secondary;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title {
+        font-family: $font-family-heading;
+        font-size: 1.8rem;
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+    }
+
+    /* Carousel Layout */
+    &__carousel {
+        position: relative;
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+
+    &__viewport {
+        overflow: hidden;
+    }
+
+    &__track {
+        display: flex;
+        touch-action: pan-y;
+    }
+
+    &__slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        padding: 0 1rem;
+        @include flex-layout(column, center, center);
+    }
+
+    /* Avatar */
+    &__avatar-wrapper {
+        width: 6.875rem;
+        height: 6.875rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 3.7rem;
+    }
+
+    &__avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Author Info */
+    &__info {
+        margin-bottom: 1.5rem;
+    }
+
+    &__author {
+        font-size: 1.5625rem;
+        color: $color-text-dark;
+        margin-bottom: 1rem;
+    }
+
+    &__name {
+        color: $color-accent-orange;
+        font-weight: $font-weight-bold;
+    }
+
+    &__role {
+        font-weight: $font-weight-regular;
+        font-size: 1.3rem;
+    }
+
+    &__stars {
+        color: $color-yellow-star;
+        font-size: $font-size-2xl;
+        letter-spacing: 0.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Quote Text */
+    &__quote {
+        color: $color-text-muted;
+        font-size: $font-size-base;
+        line-height: 1.6;
+        max-width: 31.25rem;
+        margin: 0 auto;
+        @include line-clamp(4);
+    }
+
+    /* Navigation Buttons */
+    &__btn {
+        position: absolute;
+        top: 3.3125rem;
+        transform: translateY(-50%);
+        width: 3.4375rem;
+        height: 3.4375rem;
+        border-radius: 50%;
+        border: none;
+        background-color: $color-white;
+        color: $color-text-dark;
+        box-shadow: $shadow-floating-card;
+        cursor: pointer;
+        padding: 0;
+        @include flex-layout(row, center, center);
+        transition: all 0.3s ease;
+        z-index: $z-content;
+
+        [class^='icon-'],
+        [class*=' icon-'] {
+            display: inline-block;
+            font-size: 0.8rem;
+            line-height: 1;
+        }
+
+        // Hover / Active (Click) / Focus state par purple gradient & white icon
+        &:hover,
+        &:active,
+        &:focus-visible {
+            background-color: $color-primary;
+            color: $color-white;
+            border-color: transparent;
+            box-shadow: $shadow-button-primary;
+        }
+
+        &--prev {
+            left: 0rem;
+        }
+
+        &--next {
+            right: 0rem;
+
+            // Next button ke liye arrow right flip
+            [class^='icon-'],
+            [class*=' icon-'] {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    /* Pagination Dots */
+    &__pagination {
+        @include flex-layout(row, center, center, 0.75rem);
+        margin-top: 2.5rem;
+    }
 
     &__dot {
-        width: 0.75rem;
-        height: 0.75rem;
+        width: 1.25rem;
+        height: 1.25rem;
         border-radius: 50%;
         background-color: $color-dot-inactive;
         border: none;
         padding: 0;
         cursor: pointer;
-        transition:
-            width 0.3s ease,
-            border-radius 0.3s ease,
-            background-color 0.3s ease;
+        transition: background-color 0.3s ease;
 
-        // BEM modifier syntax for active state
-        &.is-active {
+        &--active {
             width: 1.5rem;
-            border-radius: 6.25rem;
-            background-color: $color-dot-active;
+            height: 1.5rem;
+            background-color: $color-secondary;
+        }
+    }
+
+    // ==========================================
+    // MEDIA QUERIES (TABLET & DESKTOP)
+    // ==========================================
+
+    @include respond-to('tablet') {
+        padding: 0rem 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -11rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 120%;
+            background-image: url('/assets/illustrations/wave-tablet-illustration.svg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+            opacity: 0.1;
+            z-index: $z-behind;
+            pointer-events: none;
+        }
+
+        &__header {
+            @include flex-layout(column, center, center, 0.4rem);
+            margin-bottom: 2.1rem;
+        }
+
+        &__subtitle {
+            letter-spacing: 0.4em;
+            margin-bottom: 0;
+        }
+
+        &__title {
+            font-size: $font-size-3xl;
+        }
+
+        &__avatar-wrapper {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 2.5rem;
+        }
+        &__info {
+            margin-bottom: 0.5rem;
+        }
+        &__author {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        &__role {
+            font-size: 1.1rem;
+        }
+        &__stars {
+            font-size: 1.4rem;
+            letter-spacing: 0.3rem;
+        }
+        &__quote {
+            max-width: 25rem;
+            line-height: 1.8rem;
+        }
+        &__btn {
+            top: 9rem;
+            width: 4.8rem;
+            height: 4.8rem;
+
+            &--prev {
+                left: 1rem;
+            }
+
+            &--next {
+                right: 1rem;
+            }
+        }
+        &__dot {
+            &--active {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+        &__pagination {
+            margin-top: 2.8rem;
+        }
+    }
+
+    @include respond-to('desktop') {
+        padding: 1rem 0rem 7rem;
+
+        // --- Wave Background Adjustment for Desktop ---
+        &::before {
+            background-image: url('/assets/illustrations/wave-desktop-illustration.svg');
+            top: -15rem;
+            height: 150%;
+            opacity: 1;
+
+            @media (min-width: $breakpoint-ultra-wide) {
+                max-width: $breakpoint-ultra-wide;
+            }
+        }
+
+        &__header {
+            gap: 1rem;
+        }
+
+        &__subtitle {
+            font-size: 1.25rem;
+            letter-spacing: 0.3em;
+        }
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        // --- Carousel & Content Scaling ---
+        &__carousel {
+            max-width: 60rem;
+        }
+
+        &__avatar-wrapper {
+            width: 8.5rem;
+            height: 8.5rem;
+            margin: 0 auto 2.8rem;
+        }
+
+        &__author {
+            font-size: 1.8rem;
+            margin-bottom: 1.8rem;
+        }
+
+        &__role {
+            font-size: $font-size-xl;
+        }
+
+        &__stars {
+            font-size: 1.7rem;
+            letter-spacing: 0.4rem;
+            margin-bottom: 2.5rem;
+        }
+
+        &__quote {
+            max-width: 53rem;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        &__btn {
+            top: 11rem;
+            width: 6.25rem;
+            height: 6.25rem;
+            font-size: 1.5rem;
+
+            &--prev {
+                left: 0;
+            }
+
+            &--next {
+                right: 0;
+            }
+
+            // Push buttons outside only when viewport is wide enough (>= 1280px)
+            @media (min-width: 80rem) {
+                &--prev {
+                    left: -7rem;
+                }
+
+                &--next {
+                    right: -8rem;
+                }
+            }
+        }
+
+        // --- Pagination Dots ---
+        &__pagination {
+            margin-top: 3rem;
+            gap: 1rem;
+        }
+
+        &__dot {
+            width: 1.25rem;
+            height: 1.25rem;
+
+            &--active {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
         }
     }
 }

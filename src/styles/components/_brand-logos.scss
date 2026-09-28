@@ -1,11 +1,8 @@
 @use '../abstract/mixins' as *;
 
 .brand-logos {
-    display: flex;
+    @include flex-layout($align: center, $justify: center, $gap: 2rem);
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
 
     @include respond-to('tablet') {
         gap: 2.5rem;

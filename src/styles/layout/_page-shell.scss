@@ -1,0 +1,47 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.page-shell {
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2.25rem;
+        left: -2.0625rem;
+        width: 17rem;
+        height: 21.75rem;
+        border-radius: 50%;
+
+        background-color: $color-accent-orange;
+        opacity: 0.5;
+        filter: blur(10.46875rem);
+
+        pointer-events: none;
+        z-index: $z-behind;
+
+        @include respond-to('tablet') {
+            width: 25rem;
+            height: 30rem;
+            top: -4rem;
+            left: -3rem;
+            filter: blur(12rem);
+        }
+
+        @include respond-to('desktop') {
+            width: 32rem;
+            height: 38rem;
+            top: -5rem;
+            left: -4rem;
+            filter: blur(14rem);
+
+            @media (min-width: $breakpoint-ultra-wide) {
+                left: calc(50% - 50rem);
+            }
+        }
+    }
+}

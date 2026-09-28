@@ -38,9 +38,15 @@ export default defineConfig(({ mode }) => {
                     assetFileNames: ({ name }) => {
                         if (
                             /\.svg$/i.test(name ?? '') &&
-                            name?.includes('icons')
+                            (name?.includes('logo') || name?.includes('logos'))
                         ) {
-                            return 'icons/[name]-[hash][extname]';
+                            return 'logos/[name]-[hash][extname]';
+                        }
+                        if (
+                            name.includes('illustrations') ||
+                            name.includes('illustration')
+                        ) {
+                            return 'assets/illustrations/[name]-[hash][extname]';
                         }
                         if (/\.(png)$/.test(name ?? '')) {
                             return 'images/[name]-[hash][extname]';
@@ -49,7 +55,7 @@ export default defineConfig(({ mode }) => {
                             return 'css/[name]-[hash][extname]';
                         }
                         if (/\.(woff2?|ttf|eot)$/.test(name ?? '')) {
-                            return 'fonts/[name]-[hash][extname]';
+                            return 'typography/[name]-[hash][extname]';
                         }
                         return '[name]-[hash][extname]';
                     },

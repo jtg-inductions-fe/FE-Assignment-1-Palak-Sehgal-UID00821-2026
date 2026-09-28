@@ -1,0 +1,99 @@
+@use '../abstract/colors' as *;
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+.sponsors {
+    position: relative;
+    width: 100%;
+    margin: 1rem 0rem;
+
+    @include respond-to('tablet') {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: calc(50% - 50vw);
+            transform: translateY(-50%);
+            width: 21.875rem;
+            height: 31.25rem;
+            background: $grad-mesh-yellow-right-center;
+            filter: blur(2.5rem);
+            pointer-events: none;
+            z-index: $z-behind;
+
+            @media (min-width: $breakpoint-ultra-wide) {
+                right: calc(50% - 50rem);
+            }
+        }
+    }
+
+    &__container {
+        @include flex-layout(
+            $align: center,
+            $justify: space-between,
+            $gap: 1.5rem
+        );
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    &__item {
+        @include flex-layout($align: center, $justify: center);
+
+        &--lg {
+            flex: 0 0 35%;
+        }
+        &--md {
+            flex: 0 0 30%;
+        }
+        &--sm {
+            flex: 0 0 20%;
+        }
+        &--xs {
+            flex: 0 0 16%;
+        }
+
+        &:nth-child(4) {
+            margin-left: auto;
+        }
+        &:nth-child(5) {
+            margin-right: auto;
+        }
+    }
+
+    @include respond-to('tablet') {
+        margin: 3rem 0rem;
+        padding: 0rem clamp(1.5rem, 18vw, 9rem);
+    }
+
+    @include respond-to('desktop') {
+        margin: 3rem 0rem;
+        padding: 0rem 3rem;
+
+        &__container {
+            @include flex-layout(
+                $align: center,
+                $justify: space-between,
+                $gap: 2.5rem
+            );
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+        &__item {
+            &--lg,
+            &--md,
+            &--sm,
+            &--xs {
+                flex: 0 1 auto;
+            }
+
+            &:nth-child(4) {
+                margin-left: 0;
+            }
+            &:nth-child(5) {
+                margin-right: 0;
+            }
+        }
+    }
+}

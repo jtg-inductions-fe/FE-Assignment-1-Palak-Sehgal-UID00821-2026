@@ -4,10 +4,44 @@
 // Custom Dynamic Min-Width Mixin
 @mixin respond-to($breakpoint) {
     @if map.has-key($breakpoints, $breakpoint) {
-        @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+        @media screen and (min-width: map.get($breakpoints,$breakpoint)) {
             @content;
         }
     } @else {
         @warn "Unknown breakpoint: `#{$breakpoint}`.";
     }
+}
+
+@mixin flex-layout(
+    $direction: row,
+    $align: stretch,
+    $justify: flex-start,
+    $gap: null
+) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+
+    @if $gap {
+        gap: $gap;
+    }
+}
+
+// Single-line ellipsis truncation
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Multi-line clamp truncation
+// Uses the standard `line-clamp` property (Baseline 2024, widely supported).
+// Falls back gracefully in older browsers — text simply flows without clipping.
+@mixin line-clamp($lines) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    overflow: hidden;
 }

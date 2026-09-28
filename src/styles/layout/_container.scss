@@ -2,9 +2,10 @@
 
 .container {
     width: 100%;
-    max-width: 75rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+    max-width: 83rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
 
     @include respond-to('tablet') {
         padding: 0 2rem;

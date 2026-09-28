@@ -8,7 +8,7 @@
     "theme_color": "#5d50c6",
     "icons": [
         {
-            "src": "/assets/icons/travlog-logo-header.svg",
+            "src": "/assets/logos/travlog-logo-header.svg",
             "sizes": "any",
             "type": "image/svg+xml",
             "purpose": "any maskable"
