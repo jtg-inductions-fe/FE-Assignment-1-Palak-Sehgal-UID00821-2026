@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'icomoon';
     src:
-        url('/assets/typography/icomoon.woff') format('woff'),
-        url('/assets/typography/icomoon.ttf') format('truetype');
+        url('/assets/typography/icomoon.woff?v=2') format('woff'),
+        url('/assets/typography/icomoon.ttf?v=2') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -24,6 +24,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-Bold-Outline:before {
+    content: '\e904';
+}
 .icon-hamburger:before {
     content: '\e909';
     color: #5d50c6;
@@ -45,15 +48,6 @@
     margin-left: -1em;
     color: rgb(255, 255, 255);
 }
-.icon-left-arow .path1:before {
-    content: '\e904';
-    color: rgb(255, 255, 255);
-}
-.icon-left-arow .path2:before {
-    content: '\e905';
-    margin-left: -1em;
-    color: rgb(25, 24, 37);
-}
 .icon-location:before {
     content: '\e906';
     color: #facd49;
@@ -65,15 +59,6 @@
 .icon-paper-plane .path2:before {
     content: '\e908';
     margin-left: -0.732421875em;
-    color: rgb(255, 255, 255);
-}
-.icon-right-arrow .path1:before {
-    content: '\e912';
-    color: rgb(93, 80, 198);
-}
-.icon-right-arrow .path2:before {
-    content: '\e90a';
-    margin-left: -0.875em;
     color: rgb(255, 255, 255);
 }
 .icon-star:before {
