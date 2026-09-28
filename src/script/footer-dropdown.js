@@ -31,6 +31,11 @@ export const initDropdown = () => {
         if (e.matches) {
             footerNavButtons.forEach((button) => {
                 button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('tabindex', '-1');
+            });
+        } else {
+            footerNavButtons.forEach((button) => {
+                button.removeAttribute('tabindex');
             });
         }
     };

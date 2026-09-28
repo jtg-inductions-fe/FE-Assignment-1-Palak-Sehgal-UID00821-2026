@@ -244,6 +244,12 @@
             padding: 0;
             cursor: default;
             pointer-events: none;
+            outline: none;
+            &:focus,
+            &:focus-visible {
+                outline: none;
+                box-shadow: none;
+            }
         }
 
         &__nav-toggle {
