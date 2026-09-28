@@ -26,11 +26,11 @@
     font-family: $font-family-heading;
     box-shadow: $shadow-tags;
     .icon-bag {
-        font-size: $font-size-2xl;
+        font-size: $font-size-xl;
         color: $color-primary;
     }
     @include respond-to('tablet') {
-        font-size: $font-size-xxs;
+        font-size: 0.625rem;
         padding: 0.5rem $font-size-base;
         .icon-bag {
             font-size: $font-size-base;
@@ -42,7 +42,7 @@
         gap: 0.85rem;
 
         .icon-bag {
-            font-size: $font-size-2xl;
+            font-size: $font-size-xl;
         }
     }
 }

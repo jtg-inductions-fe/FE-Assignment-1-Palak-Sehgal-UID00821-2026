@@ -185,7 +185,7 @@
     }
 
     // ==========================================
-    // MEDIA QUERIES (TABLET VIEW - PIXEL PERFECT FIX)
+    // MEDIA QUERIES
     // ==========================================
     @include respond-to('tablet') {
         position: relative;
@@ -219,7 +219,7 @@
         }
 
         &__social-link {
-            font-size: $font-size-2xl;
+            font-size: $font-size-xl;
             width: 1.1em;
             height: 1.1em;
         }
