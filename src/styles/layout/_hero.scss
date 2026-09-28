@@ -125,6 +125,7 @@
         color: $color-text-muted;
         margin-bottom: 2rem;
         opacity: 0.5;
+        @include line-clamp(2);
     }
 
     &__actions {
@@ -262,9 +263,11 @@
         &__description {
             font-size: 1.125rem;
             line-height: 1.6;
-            margin-bottom: 2.5rem;
             padding: 0;
             max-width: 20rem;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            margin: 0rem 0rem 2.5rem;
         }
 
         &__actions {

@@ -68,6 +68,7 @@ $travel-point-media-bleed-desktop: 1rem;
         color: rgba(25, 24, 37, 0.5);
         margin-bottom: 2rem;
         max-width: 20rem;
+        @include line-clamp(3);
     }
 
     /* Stats Grid - Single Column Stack for Mobile */
@@ -112,6 +113,8 @@ $travel-point-media-bleed-desktop: 1rem;
         font-size: $font-size-lg;
         font-weight: $font-weight-regular;
         color: $color-text-muted;
+        @include text-truncate;
+        max-width: 100%;
     }
 
     &__decor-icon {

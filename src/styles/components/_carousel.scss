@@ -100,6 +100,7 @@
         line-height: 1.6;
         max-width: 31.25rem;
         margin: 0 auto;
+        @include line-clamp(4);
     }
 
     /* Navigation Buttons */

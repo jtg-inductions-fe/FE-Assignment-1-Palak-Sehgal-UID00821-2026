@@ -27,3 +27,21 @@
         gap: $gap;
     }
 }
+
+// Single-line ellipsis truncation
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Multi-line clamp truncation
+// Uses the standard `line-clamp` property (Baseline 2024, widely supported).
+// Falls back gracefully in older browsers — text simply flows without clipping.
+@mixin line-clamp($lines) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    overflow: hidden;
+}
