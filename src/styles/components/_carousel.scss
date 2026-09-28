@@ -103,6 +103,7 @@
         @include line-clamp(4);
     }
 
+    /* Navigation Buttons */
     &__btn {
         position: absolute;
         top: 3.3125rem;
@@ -111,6 +112,9 @@
         height: 3.4375rem;
         border-radius: 50%;
         border: none;
+        background-color: $color-white;
+        color: $color-text-dark;
+        box-shadow: $shadow-floating-card;
         cursor: pointer;
         padding: 0;
         @include flex-layout(row, center, center);
@@ -120,26 +124,28 @@
         [class^='icon-'],
         [class*=' icon-'] {
             display: inline-block;
-            font-size: 0.5rem;
+            font-size: 0.8rem;
             line-height: 1;
+        }
+
+        // Hover / Active (Click) / Focus state par purple gradient & white icon
+        &:hover,
+        &:active,
+        &:focus-visible {
+            background-color: $color-primary;
+            color: $color-white;
+            border-color: transparent;
+            box-shadow: $shadow-button-primary;
         }
 
         &--prev {
             left: 0rem;
-            background-color: $color-white;
-            color: $color-text-dark;
-            box-shadow: $shadow-floating-card;
-            border: 0.125rem solid rgba($color-text-muted, 0.1);
-            // Pehle se left pointing arrow hai, rotation ki zaroorat nahi
         }
 
         &--next {
             right: 0rem;
-            background-color: $color-primary;
-            color: $color-white;
-            box-shadow: $shadow-button-primary;
 
-            // Next button ke liye arrow ko Right side flip karein
+            // Next button ke liye arrow right flip
             [class^='icon-'],
             [class*=' icon-'] {
                 transform: rotate(180deg);
