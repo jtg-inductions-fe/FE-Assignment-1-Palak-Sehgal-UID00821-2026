@@ -126,6 +126,6 @@ To maintain consistency and ensure the icon fonts, CSS, and selection data stay 
 4. Click **Generate Font** at the bottom right of the screen.
 5. Download the generated `.zip` file and extract it.
 6. Replace the following files in the project to keep everything synchronized:
-    - Replace the font files (`.ttf`, `.woff`, etc.) in your `public/assets/fonts/` directory.
+    - Replace the font files (`.ttf`, `.woff`, etc.) in your `public/assets/typography/` directory.
     - Replace the `icomoon.css` file in the `src/styles/vendors/` directory.
     - Replace the `selection.json` file in the `src/styles/vendors/` directory with the new one from the downloaded zip.
